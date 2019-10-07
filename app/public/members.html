@@ -41,27 +41,118 @@
         <div class="card border-0 shadow my-5">
           <div class="card-body p-5">
             <h1 class="font-weight-light">Members</h1>
-            <p class="lead">Insert text here.</p>
             <p class="lead">
-              
-              
-              
-              
-              
-              
-              Scroll down...
+                <center>
+                  <table id="taskTable" class="table-striped">
+                    <thead>	
+                      <tr> 
+                        <th class="text-center">First Name</th>
+                                <th class="text-center">Last Name</th>
+                                <th class="text-center">Year published</th>
+                                <th class="text-center">Publisher</th>
+                                <th class="text-center">Page Count</th>
+                                <th class="text-center">MSRP</th>
+                      </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr>
+                      <td>To Kill a Mockingbird</td>
+                            <td>Harper Lee</td>
+                            <td>1960</td>
+                            <td>J.B. Lippincott & Co.</td>
+                            <td>281</td>
+                            <td>$4.19</td>
+                        </tr>
+                        <tr>
+                            <td>The Great Gatsby</td>
+                            <td>F. Scott Fitzgerald</td>
+                            <td>1925</td>
+                            <td>Charles Scribner's Sons</td>
+                            <td>218</td>
+                            <td>$2.99</td>
+                        </tr>
+                        <tr>
+                      <td>The Spirit of Science Fiction</td>
+                            <td>Roberto Bolano</td>
+                            <td>2019</td>
+                            <td>Editorial Anagrama</td>
+                            <td>209</td>
+                            <td>$6.89</td>
+                        </tr>
+                        <tr>
+                            <td>Fahrenheit 451</td>
+                            <td>Ray Bradbury</td>
+                            <td>1953</td>
+                            <td>Ballantine Books</td>
+                            <td>158</td>
+                            <td>$4.86</td>
+                        </tr>
+                
+                    </table>
+                  </center>
+                <br><br>
+                    <h4><b>Add new member:</b></h4>
+                    <form action="" method="post" class="form-horizontal">
+                
+                            <div class="form-group">
+                            <label for="title" class="control-label col-sm-2">Title:</label> 
+                            <div class="col-sm-10">
+                            <input type="text" class="form-control" name="title" id="title" placeholder="Enter title"><br>
+                            </div>
+                            </div>
+                
+                            <div class="form-group">
+                            <label for="author" class="control-label col-sm-2">Author(s):</label> 
+                            <div class="col-sm-10">
+                            <input type="text" class="form-control" name="author" id="author" placeholder="Enter author(s) name"><br>
+                            </div>
+                            </div>
+                
+                            <div class="form-group">
+                            <label for="year" class="control-label col-sm-2">Year Published:</label> 
+                            <div class="col-sm-10">
+                            <input type="date" class="form-control" name="year" id="year" placeholder="Enter year published"><br>
+                            </div>
+                            </div>
+                
+                            <div class="form-group">
+                            <label for="publisher" class="control-label col-sm-2">Publisher:</label> 
+                            <div class="col-sm-10">
+                            <input type="text" class="form-control" name="publisher" id="publisher" placeholder="Enter publisher name"><br>
+                            </div>
+                            </div>
+                
+                            <div class="form-group">
+                            <label for="pcount" class="control-label col-sm-2">Page Count:</label> 
+                            <div class="col-sm-10">
+                            <input type="number" class="form-control" name="pcount" id="pcount" placeholder="Enter page count"><br>
+                            </div>
+                            </div>
+                
+                            <div class="form-group">
+                            <label for="msrp" class="control-label col-sm-2">MSRP:</label> 
+                            <div class="col-sm-10">
+                            <input type="number" class="form-control" name="msrp" id="msrp" placeholder="Enter MSRP"><br>
+                            </div>
+                            </div>
+                
+                            <br>
+                            <center><button type="submit" class="btn btn-success">Add member</button>
+                            </center>
+                        </form>
+                      </p>
+                </div>
             
             
             
             
             
-            </p>
-            <div style="height: 700px"></div>
-            <p class="lead mb-0">You've reached the end!</p>
+            
           </div>
         </div>
       </div>
-      
+    
       
       
       
