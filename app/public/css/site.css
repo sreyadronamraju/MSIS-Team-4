@@ -3,6 +3,34 @@
   /* background-color: rgb(255,230,230); */
 }
 
+/* body css snippet from https://startbootstrap.com/snippets/full-image-background */
+body {
+  background: url("../img/mainbg.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+/*
+.container .card{
+   top:60px;
+  
+}
+
+.navbar {
+  position:fixed;
+  top:0;
+  width:100%;
+}
+
+*/
+
+.card-body {
+  background-color: #333333;
+  color: white;
+  }
+
 .queueView {
   border: 2px black solid;
   background-color: rgb(230,230,230);
