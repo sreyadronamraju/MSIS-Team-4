@@ -12,6 +12,16 @@ body {
   -o-background-size: cover;
 }
 
+.logo {
+  width:10%;
+  height:10%;
+}
+
+
+th,tr {font-size:14px;
+  padding:6px;
+text-align:center;}
+
 /*
 .container .card{
    top:60px;
@@ -61,3 +71,4 @@ body {
   border-left-color: blue;
   border-left-width: 6px;
 }
+
