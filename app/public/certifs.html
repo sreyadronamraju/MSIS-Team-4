@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My Page Title</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+    <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top mb-5 shadow">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+              <img src="./img/logo.png" class="logo" alt="">
+              Oconee County Fire Rescue</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home
+                      <span class="sr-only">(current)</span>
+                    </a>
+              </li>
+              <li class="nav-item">
+                    <a class="nav-link" href="members.html">Members</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="certifs.html">Certifications</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="reports.html">Reports</a>
+                    </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Page Content navigation layout from https://startbootstrap.com/snippets/full-image-background/ -->
+
+
+      <div class="container">
+        <div class="card border-0 shadow my-5">
+          <div class="card-body p-5">
+            <h1 class="font-weight-light">Update Certification</h1>
+
+
+            <!-- Form and table are created using bootstrap -->
+            <form action="" method="post" class="form-horizontal">
+
+                    <div class="form-group">
+                    <label for="firstName" class="control-label col-sm-2">First Name:</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" name="firstName" id="inputFirstName" placeholder="First Name"><br>
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="LastName" class="control-label col-sm-2">Last Name:</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" name="firstName" id="inputLastName" placeholder="Last Name"><br>
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="certification" class="control-label col-sm-2">Certification:</label>
+                    <div class="col-sm-10">
+                      <select class="form-control" name="certification" id="inputCertification">
+                        <option selected=disabled>Certification</option>
+                        <option>CPR AHA</option>
+                        <option>CPR Red Cross</option>
+                        <option>Fire Fighter ATC</option>
+                        <option>Fire Fighter Ivy Tech</option>
+                        <option>POST</option>
+                      </select>
+                      <br>
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="publisher" class="control-label col-sm-2">Date:</label>
+                    <div class="col-sm-10">
+                    <input type="date" class="form-control" name="date" id="inputDate" placeholder="Date:"><br>
+                    </div>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-success">Update Certification</button>
+
+                </form>
+
+                <br>
+            <center>
+
+              
+                <table id="taskTable"class="table">
+          <thead class="card-body">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Certification Name</th>
+              <th scope="col">Certification Agency</th>
+              <th scope="col">Default Expiration Period</th>
+              <!-- <th scope="col">Page Count</th>
+              <th scope="col">MSRP</th> -->
+            </tr>
+          </thead>
+          <tbody class="card-body">
+            <tr>
+              <th scope="row">1</th>
+              <td>CPR AHA</td>
+              <td>Healthcaare Providers/American Heart Association</td>
+              <td>2 Years</td>
+              <!-- <td>256</td>
+              <td>14.95</td> -->
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>CPR Red Cross</td>
+              <td>Professional Rescuer/American Red Cross</td>
+              <td>2 Years</td>
+              <!-- <td>256</td>
+              <td>14.95</td> -->
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Fire Fighter ATC</td>
+              <td>Athens Technical College</td>
+              <td>3 Years</td>
+              <!-- <td>256</td>
+              <td>14.95</td> -->
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Fire Fighter Ivy Tech</td>
+              <td>Ivy Technical College</td>
+              <td>3 Years</td>
+              <!-- <td>256</td>
+              <td>14.95</td> -->
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>POST</td>
+              <td>Georgia POST Academy</td>
+              <td>5 Years</td>
+              <!-- <td>256</td>
+              <td>14.95</td> -->
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>POST</td>
+              <td>Georgia POST Academy</td>
+              <td>5 Years</td>
+              <!-- <td>256</td>
+              <td>14.95</td> -->
+            </tr>
+
+          </tbody>
+        </table>
+
+              </center>
+            <div style="height: 700px"></div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      </body>
+      </html>
