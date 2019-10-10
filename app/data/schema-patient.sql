@@ -9,7 +9,7 @@
 -- );
 
 CREATE TABLE Person (
-    personID VARCHAR(64) PRIMARY KEY,
+    personID INTEGER PRIMARY KEY AUTO_INCREMENT,
     firstName VARCHAR(64),
     lastName VARCHAR(64),
     sexAtBirth CHAR(1) DEFAULT '',
@@ -18,11 +18,20 @@ CREATE TABLE Person (
     email VARCHAR(64),
     dateHired DATE DEFAULT NULL,
     position VARCHAR(64),
-    isActive VARCHAR(1),
+    isActive boolean DEFAULT TRUE,
     radioNumber INTEGER,
     stationNumber INTEGER
 
 );
+
+INSERT INTO Person (firstName, lastName, sexAtBirth, dob, phoneNumber,email, dateHired, position, isActive, radioNumber, stationNumber) VALUES
+('Bobby','Jones','M','1902-03-17','555-555-1234','bjones@augusta.com','2015-08-08','Firefighter',TRUE,24,18);
+('Sam','Snead','M','1912-05-27','555-555-1234','Sam.Snead1@gmail.com','2015-08-08','Firefighter',TRUE,25,18);
+('Jack','Nicklaus','M','1940-01-21','555-555-1234','mostmajors18@goldenbear.com','2015-08-08','Firefighter',TRUE,26,18);
+('Arnold','Palmer','M','1929-09-10','555-555-1234','icedtealemonade@ygmail.com','2015-08-08','Firefighter',TRUE,27,18);
+('Lee','Trevino','M','1939-12-01','555-555-1234','vinoman39@yahoo.com','2015-08-08','Firefighter',TRUE,14,18);
+('Payne','Stewart','M','1957-01-30','555-555-1234','knickers30@yahoo.com','2015-08-08','Firefighter',TRUE,17,18);
+('Ben','Hogan','M','1912-08-13','555-555-1234','bhogan@gmail.com','2015-08-08','Firefighter',TRUE,05,18);
 
 -- INSERT INTO Patient (patientGuid, firstName, lastName, dob, sexAtBirth) VALUES
 -- ("SOME-REALLY-LONG-1234", "Sylvia", "Hernandez", "2012-09-01",  "F"),
