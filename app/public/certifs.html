@@ -34,37 +34,107 @@
           </div>
         </div>
       </nav>
-      
+
       <!-- Page Content navigation layout from https://startbootstrap.com/snippets/full-image-background/ -->
+
+
       <div class="container">
         <div class="card border-0 shadow my-5">
           <div class="card-body p-5">
-            <h1 class="font-weight-light">Certifications</h1>
-            <p class="lead">Insert text here.</p>
-            <p class="lead">
-              
-              
-              
-              
-              
-              
-              Scroll down...
-            
-            
-            
-            
-            
-            </p>
+            <h1 class="font-weight-light">Update Certification</h1>
+
+
+            <!-- Form and table are created using bootstrap -->
+            <form action="" method="post" class="form-horizontal">
+
+                    <div class="form-group">
+                    <label for="firstName" class="control-label col-sm-2">First Name:</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" name="firstName" id="inputFirstName" placeholder="First Name"><br>
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="LastName" class="control-label col-sm-2">Last Name:</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" name="firstName" id="inputLastName" placeholder="Last Name"><br>
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="certification" class="control-label col-sm-2">Certification:</label>
+                    <div class="col-sm-10">
+                      <select class="form-control" name="certification" id="inputCertification">
+                        <option selected=disabled>Certification</option>
+                        <option>CPR AHA</option>
+                        <option>CPR Red Cross</option>
+                        <option>Fire Fighter ATC</option>
+                        <option>Fire Fighter Ivy Tech</option>
+                        <option>POST</option>
+                      </select>
+                      <br>
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="publisher" class="control-label col-sm-2">Date:</label>
+                    <div class="col-sm-10">
+                    <input type="date" class="form-control" name="date" id="inputDate" placeholder="Date:"><br>
+                    </div>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-success">Update Certification</button>
+
+                </form>
+
+                <br>
+            <center>
+              <table id="taskTable" class="table-striped">
+                <thead>
+                  <tr>
+                            <th class="text-center">Certification Name</th>
+                            <th class="text-center">Certification Agency</th>
+                            <th class="text-center">Default Expiration Period</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>CPR AHA</td>
+                        <td>Healthcare Providers/American Heart Association</td>
+                        <td>2 Years</td>
+                    </tr>
+                    <tr>
+                        <td>CPR Red Cross</td>
+                        <td>Professional Rescuer/American Red Cross</td>
+                        <td>2 Years</td>
+                    </tr>
+                    <tr>
+                        <td>Fire Fighter ATC</td>
+                        <td>Athens Technical College</td>
+                        <td>3 Years</td>
+                    </tr><tr>
+                        <td>Fire Fighter Ivy Tech</td>
+                        <td>Ivy Technical College</td>
+                        <td>3 Years</td>
+                    </tr><tr>
+                        <td>POST</td>
+                        <td>Georgia POST Academy</td>
+                        <td>5 Years</td>
+                    </tr>
+
+                </table>
+              </center>
             <div style="height: 700px"></div>
-            <p class="lead mb-0">You've reached the end!</p>
+
           </div>
         </div>
       </div>
-      
-      
-      
-      
-      
+
+
+
+
+
       </body>
       </html>
-      
