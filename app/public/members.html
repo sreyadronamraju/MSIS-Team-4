@@ -62,9 +62,26 @@
                                 <th class="text-center">Station No.</th>
                       </tr>
                     </thead>
-
+<!-- @click="handleRowClick(p)" -->
                     <tbody>
-                      <tr>
+                      <tr v-for="p in persons" >
+                        <td>{{ p.personID }}</td>
+                        <td>{{ p.firstName }}</td>
+                        <td>{{ p.lastName }}</td>
+                        <td>{{ p.sexAtBirth }}</td>
+                        <td>{{ p.dob }}</td>
+                        <td>{{ p.phoneNumber }}</td>
+                        <td>{{ p.email }}</td>
+                        <td>{{ p.dateHired }}</td>
+                        <td>{{ p.position }}</td>
+                        <td>{{ p.isActive }}</td>
+                        <td>{{ p.radioNumber }}</td>
+                        <td>{{ p.stationNumber }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                      <!-- <tr>
                       <td>101</td>
                       <td>Kathryn</td>
                       <td>Pryde</td>
@@ -110,7 +127,7 @@
                               </tr>
 
                     </tbody>
-                    </table>
+                    </table> -->
                   </center>
                 <br><br>
                     <h4><b>Add new member:</b></h4>
