@@ -45,6 +45,8 @@
             <h1 class="font-weight-light">Members</h1>
             <p class="lead">
                 <center>
+
+
                   <table id="taskTable" class="table">
                     <thead class="card-body">
                       <tr>
@@ -64,7 +66,17 @@
                     </thead>
 
                     <tbody class="card-body">
-                      <tr>
+                      <tr v-for="m in members" @click="handleRowClick(m)">
+                        <td>{{m.personID}}</td>
+                        <td>{{m.firstName}}</td>
+                        <td>{{m.lastName}}</td>
+                        <td>{{m.sexAtBirth}}</td>
+                      </tr>
+
+
+
+
+                        <!--
                       <td>101</td>
                       <td>Kathryn</td>
                       <td>Pryde</td>
@@ -107,10 +119,12 @@
                               <td>Active</td>
                               <td>122</td>
                               <td>1</td>
-                              </tr>
+                            </tr> -->
 
                     </tbody>
                     </table>
+
+
                   </center>
                 <br><br>
                     <h4><b>Add new member:</b></h4>
@@ -216,7 +230,8 @@
         </div>
       </div>
 
-
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="member.app.js"></script>
 
 
 
