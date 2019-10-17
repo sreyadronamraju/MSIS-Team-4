@@ -5,11 +5,10 @@ var certifsApp = new Vue({
   },
   methods: {
     fetchCertifs() {
-      fetch('api/certifs/')
+      fetch('api/certifs/index.php')
       .then(response => response.json())
       .then(json => { certifsApp.certifs = json })
-    },
-
+    }
   },
   created() {
     this.fetchCertifs();

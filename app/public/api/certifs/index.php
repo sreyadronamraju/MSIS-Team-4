@@ -4,12 +4,9 @@
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$stmt = $db->prepare(
-  'SELECT *
-  FROM Certifs c'
-);
+$stmt = $db->prepare('SELECT * FROM Cert');
 $stmt->execute();
-$Certifs = $stmt->fetchAll();
+$certifs = $stmt->fetchAll();
 
 // Step 3: Convert to JSON
 $json = json_encode($certifs, JSON_PRETTY_PRINT);

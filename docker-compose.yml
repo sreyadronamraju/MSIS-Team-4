@@ -8,3 +8,4 @@ services:
       - ./docker/env
     volumes:
       - ./app:/srv/app
+      - ./app_class:/srv/app/class

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>My Page Title</title>
+  <title>Certifications</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/site.css">
 </head>
@@ -119,7 +119,7 @@
           <tbody class="card-body">
 
             <tr>
-              <tr v-for="c in certifs" @click="handleRowClick(c)">
+              <tr v-for="c in certifs" >
                 <td>{{ c.certID }}</td>
                 <td>{{ c.certName }}</td>
                 <td>{{ c.certAgency }}</td>
@@ -177,7 +177,7 @@
 
 
       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-      <script src="js/waiting.app.js"></script>
+      <script src="js/certifs.app.js"></script>
       <script src="js/tablesort.min.js"></script>
       <script>
 
