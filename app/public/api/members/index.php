@@ -4,13 +4,7 @@
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$stmt = $db->prepare(
-  'SELECT *
-  FROM Person'
-);
-
-// TODO: Implement triage sort
-
+$stmt = $db->prepare('SELECT * FROM Person');
 $stmt->execute();
 $members = $stmt->fetchAll();
 

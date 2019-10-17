@@ -46,7 +46,7 @@
             <p class="lead">
                 <center>
 
-
+                  <div id="memberApp">
                   <table id="taskTable" class="table">
                     <thead class="card-body">
                       <tr>
@@ -66,11 +66,19 @@
                     </thead>
 
                     <tbody class="card-body">
-                      <tr v-for="m in members" @click="handleRowClick(m)">
+                      <tr v-for="m in members">
                         <td>{{m.personID}}</td>
                         <td>{{m.firstName}}</td>
                         <td>{{m.lastName}}</td>
                         <td>{{m.sexAtBirth}}</td>
+                        <td>{{m.dob}}</td>
+                        <td>{{m.phoneNumber}}</td>
+                        <td>{{m.email}}</td>
+                        <td>{{m.dateHired}}</td>
+                        <td>{{m.position}}</td>
+                        <td>{{m.isActive}}</td>
+                        <td>{{m.radioNumber}}</td>
+                        <td>{{m.stationNumber}}</td>
                       </tr>
 
 
@@ -123,7 +131,7 @@
 
                     </tbody>
                     </table>
-
+                    </div>
 
                   </center>
                 <br><br>
@@ -231,7 +239,7 @@
       </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="member.app.js"></script>
+<script src="js/member.app.js"></script>
 
 
 
