@@ -25,3 +25,15 @@ CREATE TABLE PatientVisit (
 
 INSERT INTO PatientVisit (visitId, patientGuid, visitDescription) VALUES
 (1, 'SOME-REALLY-LONG-1234', 'Anxiety from D&S');
+
+
+ INSERT INTO Cert (certID, certName, certAgency, expPeriod) VALUES
+
+ ("1", "FireFighter I", "Ivy Technical College", "3"),
+ ("2", "FireFighter I", "Athens Technical College", "3"),
+ ("3", "CPR", "Healthcare Providers/American Heart Association", "2"),
+ ("4", "CPR", "Professional Rescuer/American Red Cross", "2"),
+ ("5", "POST", "Georgia POST Academy", "5");
+
+
+ 
