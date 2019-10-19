@@ -1,90 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>My Page Title</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/site.css">
 </head>
+
 <body>
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top mb-5 shadow">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-              <img src="./img/logo.png" class="logo" alt="">
-              Oconee County Fire Rescue</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home
-                      <span class="sr-only">(current)</span>
-                    </a>
-              </li>
-              <li class="nav-item">
-                    <a class="nav-link" href="members.html">Members</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="certifs.html">Certifications</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="report.html">Reports</a>
-                    </li>
-                </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top mb-5 shadow">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="./img/logo.png" class="logo" alt="">
+        Oconee County Fire Rescue</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="members.html">Members</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="certifs.html">Certifications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="report.html">Reports</a>
+          </li>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-      <!-- Page Content navigation layout from https://startbootstrap.com/snippets/full-image-background/ -->
-      <div class="container">
-        <div class="card border-0 shadow my-5">
-          <div class="card-body p-5">
-            <h1 class="font-weight-light">Members</h1>
-            <p class="lead">
-                <center>
-
-                  <div id="memberApp">
-                  <table id="taskTable" class="table">
-                    <thead class="card-body">
-                      <tr>
-                        <th class="text-center">ID</th>
-                                <th class="text-center">First Name</th>
-                                <th class="text-center">Last Name</th>
-                                <th class="text-center">Sex at Birth</th>
-                                <th class="text-center">Date of Birth</th>
-                                <th class="text-center">Phone No.</th>
-                                <th class="text-center">Email ID</th>
-                                <th class="text-center">Date Hired</th>
-                                <th class="text-center">Position</th>
-                                <th class="text-center">Status</th>
-                                <th class="text-center">Radio No.</th>
-                                <th class="text-center">Station No.</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="card-body">
-                      <tr v-for="m in members">
-                        <td>{{m.personID}}</td>
-                        <td>{{m.firstName}}</td>
-                        <td>{{m.lastName}}</td>
-                        <td>{{m.sexAtBirth}}</td>
-                        <td>{{m.dob}}</td>
-                        <td>{{m.phoneNumber}}</td>
-                        <td>{{m.email}}</td>
-                        <td>{{m.dateHired}}</td>
-                        <td>{{m.position}}</td>
-                        <td>{{m.isActive}}</td>
-                        <td>{{m.radioNumber}}</td>
-                        <td>{{m.stationNumber}}</td>
-                      </tr>
+  <!-- Page Content navigation layout from https://startbootstrap.com/snippets/full-image-background/ -->
+  <div class="container">
+    <div class="card border-0 shadow my-5">
+      <div class="card-body p-5" id="memberApp">
+        <h1 class="font-weight-light">Members</h1>
+        <p class="lead">
+          <center>
 
 
 
+            <table id="taskTable" class="table">
+              <thead class="card-body">
+                <tr>
+                  <th class="text-center">ID</th>
+                  <th class="text-center">First Name</th>
+                  <th class="text-center">Last Name</th>
+                  <th class="text-center">Sex at Birth</th>
+                  <th class="text-center">Date of Birth</th>
+                  <th class="text-center">Phone No.</th>
+                  <th class="text-center">Email ID</th>
+                  <th class="text-center">Date Hired</th>
+                  <th class="text-center">Position</th>
+                  <th class="text-center">Status</th>
+                  <th class="text-center">Radio No.</th>
+                  <th class="text-center">Station No.</th>
+                </tr>
+              </thead>
 
-                        <!--
+              <tbody class="card-body">
+                <tr v-for="m in members">
+                  <td>{{m.personID}}</td>
+                  <td>{{m.firstName}}</td>
+                  <td>{{m.lastName}}</td>
+                  <td>{{m.sexAtBirth}}</td>
+                  <td>{{m.dob}}</td>
+                  <td>{{m.phoneNumber}}</td>
+                  <td>{{m.email}}</td>
+                  <td>{{m.dateHired}}</td>
+                  <td>{{m.position}}</td>
+                  <td>{{m.isActive}}</td>
+                  <td>{{m.radioNumber}}</td>
+                  <td>{{m.stationNumber}}</td>
+                </tr>
+
+
+
+
+                <!--
                       <td>101</td>
                       <td>Kathryn</td>
                       <td>Pryde</td>
@@ -129,119 +134,146 @@
                               <td>1</td>
                             </tr> -->
 
-                    </tbody>
-                    </table>
-                    </div>
-
-                  </center>
-                <br><br>
-                    <h4><b>Add new member:</b></h4>
-                    <form action="" method="post" class="form-horizontal">
-
-                            <div class="form-group">
-                            <label for="personID" class="control-label col-sm-2">ID:</label>
-                            <div class="col-sm-10">
-                            <input type="number" class="form-control" name="personID" id="personID" placeholder="Enter ID"><br>
-                            </div>
-                            </div>
-
-                            <div class="form-group">
-                            <label for="firstName" class="control-label col-sm-2">First Name:</label>
-                            <div class="col-sm-10">
-                            <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Enter first name"><br>
-                            </div>
-                            </div>
-
-                            <div class="form-group">
-                            <label for="lastName" class="control-label col-sm-2">Last Name:</label>
-                            <div class="col-sm-10">
-                            <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter last name"><br>
-                            </div>
-                            </div>
-
-                            <div class="form-group">
-                            <label for="sexAtBirth" class="control-label col-sm-2">Sex at Birth</label>
-                            <div class="col-sm-10">
-                            <input type="text" class="form-control" name="sexAtBirth" id="sexAtBirth" placeholder="Male or Female"><br>
-                            </div>
-                            </div>
-
-                            <div class="form-group">
-                            <label for="dob" class="control-label col-sm-2">Date of Birth:</label>
-                            <div class="col-sm-10">
-                            <input type="date" class="form-control" name="dob" id="dob"><br>
-                            </div>
-                            </div>
-
-                            <div class="form-group">
-                            <label for="phoneNumber" class="control-label col-sm-2">Phone No.:</label>
-                            <div class="col-sm-10">
-                            <input type="number" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="Enter Phone No."><br>
-                            </div>
-                            </div>
-
-                            <div class="form-group">
-                            <label for="email" class="control-label col-sm-2">Email ID:</label>
-                            <div class="col-sm-10">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email ID"><br>
-                            </div>
-                            </div>
-
-                            <div class="form-group">
-                            <label for="dateHired" class="control-label col-sm-2">Date Hired:</label>
-                            <div class="col-sm-10">
-                            <input type="date" class="form-control" name="dateHired" id="dateHired"><br>
-                            </div>
-                            </div>
-
-                            <div class="form-group">
-                            <label for="position" class="control-label col-sm-2">Position:</label>
-                            <div class="col-sm-10">
-                            <input type="text" class="form-control" name="position" id="position" placeholder="Enter Position"><br>
-                            </div>
-                            </div>
-
-                            <div class="form-group">
-                            <label for="isActive" class="control-label col-sm-2">Status:</label>
-                            <div class="col-sm-10">
-                            <input type="text" class="form-control" name="isActive" id="isActive" placeholder="Enter Status"><br>
-                            </div>
-                            </div>
-
-                            <div class="form-group">
-                            <label for="radioNumber" class="control-label col-sm-2">Radio No.:</label>
-                            <div class="col-sm-10">
-                            <input type="text" class="form-control" name="radioNumber" id="radioNumber" placeholder="Enter Radio No."><br>
-                            </div>
-                            </div>
-
-                            <div class="form-group">
-                            <label for="stationNumber" class="control-label col-sm-2">Station No.:</label>
-                            <div class="col-sm-10">
-                            <input type="text" class="form-control" name="stationNumber" id="stationNumber" placeholder="Enter Station No."><br>
-                            </div>
-                            </div>
-
-                            <br>
-                            <center><button type="submit" class="btn btn-success">Add member</button>
-                            </center>
-                        </form>
-                      </p>
-                </div>
+              </tbody>
+            </table>
 
 
+          </center>
+          <br><br>
+          <h4><b>Add new member:</b></h4>
+          <form @submit.prevent="handleSubmit">
 
+            <div class="form-group">
+              <label for="firstName" class="control-label col-sm-2">First Name:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Enter first name"
+                  v-model="newmember.firstName"><br>
+              </div>
+            </div>
 
+            <div class="form-group">
+              <label for="lastName" class="control-label col-sm-2">Last Name:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter last name"
+                  v-model="newmember.lastName"><br>
+              </div>
+            </div>
 
+            <div class="form-group">
+              <label for="sexAtBirth" class="control-label col-sm-2">Sex at Birth</label>
+              <div class="col-sm-10">
+                <select class="form-control" name="sexAtBirth" id="sexAtBirth" placeholder="M | F"
+                  v-model="newmember.sexAtBirth">
+                  <option value="M">M</option>
+                  <option value="F">F</option>
+                </select>                  
+                  <br>
+              </div>
+            </div>
 
-          </div>
-        </div>
+            <div class="form-group">
+              <label for="dob" class="control-label col-sm-2">Date of Birth:</label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" name="dob" id="dob" v-model="newmember.dob"><br>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="phoneNumber" class="control-label col-sm-2">Phone No.:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="phoneNumber" id="phoneNumber"
+                  placeholder="Enter Phone No." v-model="newmember.phoneNumber"><br>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="control-label col-sm-2">Email ID:</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email ID"
+                  v-model="newmember.email"><br>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="dateHired" class="control-label col-sm-2">Date Hired:</label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" name="dateHired" id="dateHired" v-model="newmember.dateHired"><br>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="position" class="control-label col-sm-2">Position:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="position" id="position" placeholder="Enter Position"
+                  v-model="newmember.position"><br>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="isActive" class="control-label col-sm-2">Status:</label>
+              <div class="col-sm-10">
+                <select class="form-control" name="isActive" id="isActive" placeholder="0 | 1"
+                  v-model="newmember.isActive">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                </select>
+                  <br>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="radioNumber" class="control-label col-sm-2">Radio No.:</label>
+              <div class="col-sm-10">
+                <select class="form-control" name="radioNumber" id="radioNumber"
+                  placeholder="Enter Radio No." v-model="newmember.radioNumber">
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                </select>
+                  
+                  <br>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="stationNumber" class="control-label col-sm-2">Station No.:</label>
+              <div class="col-sm-10">
+                <select class="form-control" name="stationNumber" id="stationNumber"
+                  placeholder="Enter Station No." v-model="newmember.stationNumber">
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                </select>
+                  
+                  
+                  <br>
+              </div>
+            </div>
+
+            <br>
+            <center><button type="submit" class="btn btn-success">Add member</button>
+            </center>
+          </form>
       </div>
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="js/member.app.js"></script>
-
+    </div>
+  </div>
 
 
-      </body>
-      </html>
+
+
+  <!-- </div> -->
+  <!-- </div> -->
+  <!-- </div> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/member.app.js"></script>
+
+
+
+</body>
+
+</html>
