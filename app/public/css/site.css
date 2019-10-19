@@ -72,3 +72,8 @@ text-align:center;}
   border-left-width: 6px;
 }
 
+/* table hover change color referenced from stack overflow */
+
+.table-hover tbody tr:hover td {
+  background-color: #eeeeea;
+}
