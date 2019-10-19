@@ -85,179 +85,178 @@
                   <td>{{m.radioNumber}}</td>
                   <td>{{m.stationNumber}}</td>
                 </tr>
-
-
-
-
-                <!--
-                      <td>101</td>
-                      <td>Kathryn</td>
-                      <td>Pryde</td>
-                      <td>Female</td>
-                      <td>11-18-1975</td>
-                      <td>707-555-1234</td>
-                      <td>kathrynpride@ocfr.com</td>
-                      <td>10-08-2015</td>
-                      <td>Chief</td>
-                      <td>Active</td>
-                      <td>A-1</td>
-                      <td>(all)</td>
-                      </tr>
-
-                      <tr>
-                          <td>102</td>
-                          <td>Piotr</td>
-                          <td>Rasputin</td>
-                          <td>Male</td>
-                          <td>08-15-1981</td>
-                          <td>206-555-9876</td>
-                          <td>piotrrasputin@ocfr.com</td>
-                          <td>11-07-2015</td>
-                          <td></td>
-                          <td>Active</td>
-                          <td>841</td>
-                          <td>8</td>
-                          </tr>
-
-                          <tr>
-                              <td>103</td>
-                              <td>Warren</td>
-                              <td>Worthington</td>
-                              <td>Male</td>
-                              <td>09-04-1978</td>
-                              <td>706-555-3945</td>
-                              <td>warrenwo@ocfr.com</td>
-                              <td>09-08-2016</td>
-                              <td></td>
-                              <td>Active</td>
-                              <td>122</td>
-                              <td>1</td>
-                            </tr> -->
-
               </tbody>
             </table>
 
 
           </center>
           <br><br>
-          <h4><b>Add new member:</b></h4>
-          <form @submit.prevent="handleSubmit">
+          <div class="row">
 
-            <div class="form-group">
-              <label for="firstName" class="control-label col-sm-2">First Name:</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Enter first name"
-                  v-model="newmember.firstName"><br>
+            <div class="col-sm-6 mb-3 mb-md-0">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Add New Member:</h5>
+                  <form @submit.prevent="handleSubmit">
+                    <p class="card-text">
+                      <div class="form-group">
+                        <label for="firstName" class="control-label">First Name:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="firstName" id="firstName"
+                            placeholder="Enter first name" v-model="newmember.firstName"><br>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="lastName" class="control-label">Last Name:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="lastName" id="lastName"
+                            placeholder="Enter last name" v-model="newmember.lastName"><br>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="sexAtBirth" class="control-label">Sex at Birth:</label>
+                        <div class="col-sm-10">
+                          <select class="form-control" name="sexAtBirth" id="sexAtBirth" placeholder="M | F"
+                            v-model="newmember.sexAtBirth">
+                            <option value="M">M</option>
+                            <option value="F">F</option>
+                          </select>
+                          <br>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="dob" class="control-label">Date of Birth:</label>
+                        <div class="col-sm-10">
+                          <input type="date" class="form-control" name="dob" id="dob" v-model="newmember.dob"><br>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="phoneNumber" class="control-label">Phone No.:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="phoneNumber" id="phoneNumber"
+                            placeholder="Enter Phone No." v-model="newmember.phoneNumber"><br>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="email" class="control-label">Email ID:</label>
+                        <div class="col-sm-10">
+                          <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email ID"
+                            v-model="newmember.email"><br>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="dateHired" class="control-label">Date Hired:</label>
+                        <div class="col-sm-10">
+                          <input type="date" class="form-control" name="dateHired" id="dateHired"
+                            v-model="newmember.dateHired"><br>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="position" class="control-label">Position:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="position" id="position"
+                            placeholder="Enter Position" v-model="newmember.position"><br>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="isActive" class="control-label">Status:</label>
+                        <div class="col-sm-10">
+                          <select class="form-control" name="isActive" id="isActive" placeholder="0 | 1"
+                            v-model="newmember.isActive">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                          </select>
+                          <br>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="radioNumber" class="control-label">Radio No.:</label>
+                        <div class="col-sm-10">
+                          <select class="form-control" name="radioNumber" id="radioNumber" placeholder="Enter Radio No."
+                            v-model="newmember.radioNumber">
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                          </select>
+
+                          <br>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="stationNumber" class="control-label">Station No.:</label>
+                        <div class="col-sm-10">
+                          <select class="form-control" name="stationNumber" id="stationNumber"
+                            placeholder="Enter Station No." v-model="newmember.stationNumber">
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                          </select>
+
+
+                          <br>
+                        </div>
+                      </div>
+
+                      <br>
+                      <center><button type="submit" class="btn btn-success">Add member</button>
+                      </center>
+                    </p>
+                  </form>
+                </div>
               </div>
             </div>
 
-            <div class="form-group">
-              <label for="lastName" class="control-label col-sm-2">Last Name:</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter last name"
-                  v-model="newmember.lastName"><br>
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Assign Certification to Member:</h5>
+                  <form>
+                    <p class="card-text">
+
+                      <div class="form-group">
+                        <label for="personID" class="control-label">Select Member:</label>
+                        <div class="col-sm-10">
+                          <select class="form-control" name="" id="" placeholder="">
+                            <option value=""></option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="certID" class="control-label">Select Certificate ID:</label>
+                        <div class="col-sm-10">
+                          <select class="form-control" name="" id="" placeholder="">
+                            <option value=""></option>
+                          </select>
+                        </div>
+                      </div>
+                      <br>
+                      <center><button type="" class="btn btn-success">Assign Certification</button>
+                      </center>
+
+                    </p>
+                  </form>
+                </div>
               </div>
             </div>
+          </div>
 
-            <div class="form-group">
-              <label for="sexAtBirth" class="control-label col-sm-2">Sex at Birth</label>
-              <div class="col-sm-10">
-                <select class="form-control" name="sexAtBirth" id="sexAtBirth" placeholder="M | F"
-                  v-model="newmember.sexAtBirth">
-                  <option value="M">M</option>
-                  <option value="F">F</option>
-                </select>                  
-                  <br>
-              </div>
-            </div>
 
-            <div class="form-group">
-              <label for="dob" class="control-label col-sm-2">Date of Birth:</label>
-              <div class="col-sm-10">
-                <input type="date" class="form-control" name="dob" id="dob" v-model="newmember.dob"><br>
-              </div>
-            </div>
 
-            <div class="form-group">
-              <label for="phoneNumber" class="control-label col-sm-2">Phone No.:</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" name="phoneNumber" id="phoneNumber"
-                  placeholder="Enter Phone No." v-model="newmember.phoneNumber"><br>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="email" class="control-label col-sm-2">Email ID:</label>
-              <div class="col-sm-10">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email ID"
-                  v-model="newmember.email"><br>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="dateHired" class="control-label col-sm-2">Date Hired:</label>
-              <div class="col-sm-10">
-                <input type="date" class="form-control" name="dateHired" id="dateHired" v-model="newmember.dateHired"><br>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="position" class="control-label col-sm-2">Position:</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" name="position" id="position" placeholder="Enter Position"
-                  v-model="newmember.position"><br>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="isActive" class="control-label col-sm-2">Status:</label>
-              <div class="col-sm-10">
-                <select class="form-control" name="isActive" id="isActive" placeholder="0 | 1"
-                  v-model="newmember.isActive">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                </select>
-                  <br>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="radioNumber" class="control-label col-sm-2">Radio No.:</label>
-              <div class="col-sm-10">
-                <select class="form-control" name="radioNumber" id="radioNumber"
-                  placeholder="Enter Radio No." v-model="newmember.radioNumber">
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                </select>
-                  
-                  <br>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="stationNumber" class="control-label col-sm-2">Station No.:</label>
-              <div class="col-sm-10">
-                <select class="form-control" name="stationNumber" id="stationNumber"
-                  placeholder="Enter Station No." v-model="newmember.stationNumber">
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                </select>
-                  
-                  
-                  <br>
-              </div>
-            </div>
-
-            <br>
-            <center><button type="submit" class="btn btn-success">Add member</button>
-            </center>
-          </form>
       </div>
     </div>
   </div>
