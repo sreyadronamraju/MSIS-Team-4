@@ -1,162 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>My Page Title</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/site.css">
 </head>
+
 <body>
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top mb-5 shadow">
-        <div class="container">
-          <a class="navbar-brand" href="#">Oconee County Fire Rescue</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home
-                      <span class="sr-only">(current)</span>
-                    </a>
-              </li>
-              <li class="nav-item">
-                    <a class="nav-link" href="members.html">Members</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="certifs.html">Certifications</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="reports.html">Reports</a>
-                    </li>
-                </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      
-      <!-- Page Content navigation layout from https://startbootstrap.com/snippets/full-image-background/ -->
-      <div class="container">
-        <div class="card border-0 shadow my-5">
-          <div class="card-body p-5">
-            <h1 class="font-weight-light">Members</h1>
-            <p class="lead">
-                <center>
-                  <table id="taskTable" class="table-striped">
-                    <thead>	
-                      <tr> 
-                        <th class="text-center">First Name</th>
-                                <th class="text-center">Last Name</th>
-                                <th class="text-center">Year published</th>
-                                <th class="text-center">Publisher</th>
-                                <th class="text-center">Page Count</th>
-                                <th class="text-center">MSRP</th>
-                      </tr>
-                    </thead>
-                    
-                    <tbody>
-                        <tr>
-                      <td>To Kill a Mockingbird</td>
-                            <td>Harper Lee</td>
-                            <td>1960</td>
-                            <td>J.B. Lippincott & Co.</td>
-                            <td>281</td>
-                            <td>$4.19</td>
-                        </tr>
-                        <tr>
-                            <td>The Great Gatsby</td>
-                            <td>F. Scott Fitzgerald</td>
-                            <td>1925</td>
-                            <td>Charles Scribner's Sons</td>
-                            <td>218</td>
-                            <td>$2.99</td>
-                        </tr>
-                        <tr>
-                      <td>The Spirit of Science Fiction</td>
-                            <td>Roberto Bolano</td>
-                            <td>2019</td>
-                            <td>Editorial Anagrama</td>
-                            <td>209</td>
-                            <td>$6.89</td>
-                        </tr>
-                        <tr>
-                            <td>Fahrenheit 451</td>
-                            <td>Ray Bradbury</td>
-                            <td>1953</td>
-                            <td>Ballantine Books</td>
-                            <td>158</td>
-                            <td>$4.86</td>
-                        </tr>
-                
-                    </table>
-                  </center>
-                <br><br>
-                    <h4><b>Add new member:</b></h4>
-                    <form action="" method="post" class="form-horizontal">
-                
-                            <div class="form-group">
-                            <label for="title" class="control-label col-sm-2">Title:</label> 
-                            <div class="col-sm-10">
-                            <input type="text" class="form-control" name="title" id="title" placeholder="Enter title"><br>
-                            </div>
-                            </div>
-                
-                            <div class="form-group">
-                            <label for="author" class="control-label col-sm-2">Author(s):</label> 
-                            <div class="col-sm-10">
-                            <input type="text" class="form-control" name="author" id="author" placeholder="Enter author(s) name"><br>
-                            </div>
-                            </div>
-                
-                            <div class="form-group">
-                            <label for="year" class="control-label col-sm-2">Year Published:</label> 
-                            <div class="col-sm-10">
-                            <input type="date" class="form-control" name="year" id="year" placeholder="Enter year published"><br>
-                            </div>
-                            </div>
-                
-                            <div class="form-group">
-                            <label for="publisher" class="control-label col-sm-2">Publisher:</label> 
-                            <div class="col-sm-10">
-                            <input type="text" class="form-control" name="publisher" id="publisher" placeholder="Enter publisher name"><br>
-                            </div>
-                            </div>
-                
-                            <div class="form-group">
-                            <label for="pcount" class="control-label col-sm-2">Page Count:</label> 
-                            <div class="col-sm-10">
-                            <input type="number" class="form-control" name="pcount" id="pcount" placeholder="Enter page count"><br>
-                            </div>
-                            </div>
-                
-                            <div class="form-group">
-                            <label for="msrp" class="control-label col-sm-2">MSRP:</label> 
-                            <div class="col-sm-10">
-                            <input type="number" class="form-control" name="msrp" id="msrp" placeholder="Enter MSRP"><br>
-                            </div>
-                            </div>
-                
-                            <br>
-                            <center><button type="submit" class="btn btn-success">Add member</button>
-                            </center>
-                        </form>
-                      </p>
-                </div>
-            
-            
-            
-            
-            
-            
-          </div>
-        </div>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top mb-5 shadow">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="./img/logo.png" class="logo" alt="">
+        Oconee County Fire Rescue</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="members.html">Members</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="certifs.html">Certifications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="report.html">Reports</a>
+          </li>
+          </li>
+        </ul>
       </div>
-    
-      
-      
-      
-      
-      </body>
-      </html>
-      
+    </div>
+  </nav>
+
+  <!-- Page Content navigation layout from https://startbootstrap.com/snippets/full-image-background/ -->
+  <div class="container">
+    <div class="card border-0 shadow my-5">
+      <div class="card-body p-5" id="memberApp">
+        <h1 class="font-weight-light">Members</h1>
+        <p class="lead">
+          <center>
+            <table id="taskTable" class="table table-sm table-hover table-responsive">
+              <thead class="card-body">
+                <tr>
+                  <th class="text-center">ID</th>
+                  <th class="text-center">First Name</th>
+                  <th class="text-center">Last Name</th>
+                  <th class="text-center">Sex at Birth</th>
+                  <th class="text-center">Date of Birth</th>
+                  <th class="text-center">Phone No.</th>
+                  <th class="text-center">Email ID</th>
+                  <th class="text-center">Date Hired</th>
+                  <th class="text-center">Position</th>
+                  <th class="text-center">Status</th>
+                  <th class="text-center">Radio No.</th>
+                  <th class="text-center">Station No.</th>
+                </tr>
+              </thead>
+
+              <tbody class="card-body">
+                <tr v-for="m in members">
+                  <td>{{m.personID}}</td>
+                  <td>{{m.firstName}}</td>
+                  <td>{{m.lastName}}</td>
+                  <td>{{m.sexAtBirth}}</td>
+                  <td>{{m.dob}}</td>
+                  <td>{{m.phoneNumber}}</td>
+                  <td>{{m.email}}</td>
+                  <td>{{m.dateHired}}</td>
+                  <td>{{m.position}}</td>
+                  <td>{{m.isActive}}</td>
+                  <td>{{m.radioNumber}}</td>
+                  <td>{{m.stationNumber}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </center>
+          <br><br>
+          <div class="row">
+
+            <div class="col-sm-6 mb-3 mb-md-0">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Add New Member:</h5>
+                  <form @submit.prevent="handleSubmit">
+                    <p class="card-text">
+                      <div class="form-group">
+                        <label for="firstName" class="control-label">First Name:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="firstName" id="firstName"
+                            placeholder="Enter first name" v-model="newmember.firstName"><br>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="lastName" class="control-label">Last Name:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="lastName" id="lastName"
+                            placeholder="Enter last name" v-model="newmember.lastName"><br>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="sexAtBirth" class="control-label">Sex at Birth:</label>
+                        <div class="col-sm-10">
+                          <select class="form-control" name="sexAtBirth" id="sexAtBirth" placeholder="M | F"
+                            v-model="newmember.sexAtBirth">
+                            <option value="M">M</option>
+                            <option value="F">F</option>
+                          </select>
+                          <br>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="dob" class="control-label">Date of Birth:</label>
+                        <div class="col-sm-10">
+                          <input type="date" class="form-control" name="dob" id="dob" v-model="newmember.dob"><br>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="phoneNumber" class="control-label">Phone No.:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="phoneNumber" id="phoneNumber"
+                            placeholder="Enter Phone No." v-model="newmember.phoneNumber"><br>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="email" class="control-label">Email ID:</label>
+                        <div class="col-sm-10">
+                          <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email ID"
+                            v-model="newmember.email"><br>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="dateHired" class="control-label">Date Hired:</label>
+                        <div class="col-sm-10">
+                          <input type="date" class="form-control" name="dateHired" id="dateHired"
+                            v-model="newmember.dateHired"><br>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="position" class="control-label">Position:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="position" id="position"
+                            placeholder="Enter Position" v-model="newmember.position"><br>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="isActive" class="control-label">Status:</label>
+                        <div class="col-sm-10">
+                          <select class="form-control" name="isActive" id="isActive" placeholder="0 | 1"
+                            v-model="newmember.isActive">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                          </select>
+                          <br>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="radioNumber" class="control-label">Radio No.:</label>
+                        <div class="col-sm-10">
+                          <select class="form-control" name="radioNumber" id="radioNumber" placeholder="Enter Radio No."
+                            v-model="newmember.radioNumber">
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                          </select>
+
+                          <br>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="stationNumber" class="control-label">Station No.:</label>
+                        <div class="col-sm-10">
+                          <select class="form-control" name="stationNumber" id="stationNumber"
+                            placeholder="Enter Station No." v-model="newmember.stationNumber">
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                          </select>
+
+
+                          <br>
+                        </div>
+                      </div>
+
+                      <br>
+                      <center><button type="submit" class="btn btn-success">Add member</button>
+                      </center>
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Assign Certification to Member:</h5>
+                  <form>
+                    <p class="card-text">
+
+                      <div class="form-group">
+                        <label for="personID" class="control-label">Enter Member ID:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="personID" id="personID"
+                            placeholder="Member ID"><br>
+                        </div>
+                      </div>
+
+
+                      <div class="form-group">
+                        <label for="certID" class="control-label">Enter Certification ID:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="certID" id="certID"
+                            placeholder="Certification ID"><br>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="certDate" class="control-label">Select Certification Start Date:</label>
+                        <div class="col-sm-10">
+                          <input type="date" class="form-control" name="certDate" id="certDate"><br>
+                        </div>
+                      </div>
+
+
+                      <br>
+                      <center><button type="" class="btn btn-success">Assign Certification</button>
+                      </center>
+
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- </div> -->
+  <!-- </div> -->
+  <!-- </div> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/member.app.js"></script>
+
+
+
+</body>
+
+</html>

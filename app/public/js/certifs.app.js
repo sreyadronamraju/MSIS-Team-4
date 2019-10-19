@@ -1,14 +1,25 @@
 var certifsApp = new Vue({
   el: '#certifsApp',
   data: {
-    members: [],
-    newmember: {}
+    certifs: [],
+    newcertifs: {},
+    deletecertifs:{}
   },
   methods: {
-    fetchMembers() {
+    fetchCertifs() {
       fetch('api/certifs/index.php')
       .then(response => response.json())
       .then(json => { certifsApp.certifs = json });
+    },
+    handleDelete(event){
+      fetch('api/certifs/postDelete.php',{
+        method: 'POST',
+        body: JSON.stringify(this.deletecertifs),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+
+      })
     },
 
     handleSubmit(event) {
@@ -20,7 +31,7 @@ var certifsApp = new Vue({
         }
       })
       .then( response => response.json() )
-      .then( json => { memberApp.certifs.push(this.newcertifs) })
+      .then( json => { certifsApp.certifs.push(this.newcertifs) })
       .catch( err => {
         console.error('RECORD POST ERROR:');
         console.error(err);

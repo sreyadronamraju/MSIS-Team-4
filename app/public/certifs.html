@@ -39,17 +39,17 @@
 
       <!-- Page Content navigation layout from https://startbootstrap.com/snippets/full-image-background/ -->
 
-
+              <div id="certifsApp">
       <div class="container">
         <div class="card border-0 shadow my-5">
           <div class="card-body p-5">
-            <h1 class="font-weight-light">Update Certification</h1>
+            <h1 class="font-weight-light">Create Certification</h1>
 
 
             <!-- Form and table are created using bootstrap -->
-            <form action="" method="post" class="form-horizontal">
+            <form @submit.prevent="handleSubmit">
 
-                    <div class="form-check form-check-inline">
+                  <!--  <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                     <label class="form-check-label" for="inlineRadio1">Renew</label>
                     </div>
@@ -58,53 +58,38 @@
                     <label class="form-check-label" for="inlineRadio2">Create New</label>
                     </div>
                     <br>
-                    <br>
-
+                    <br>o7
+                  -->
                     <div class="form-group">
-                    <label for="firstName" class="control-label col-sm-2">First Name:</label>
+                    <label for="certName" class="control-label col-sm-10">Certification Name:</label>
                     <div class="col-sm-10">
-                    <input type="text" class="form-control" name="firstName" id="inputFirstName" placeholder="First Name"><br>
-                    </div>
-                    </div>
-
-                    <div class="form-group">
-                    <label for="LastName" class="control-label col-sm-2">Last Name:</label>
-                    <div class="col-sm-10">
-                    <input type="text" class="form-control" name="firstName" id="inputLastName" placeholder="Last Name"><br>
+                    <input type="text" class="form-control" name="certName" id="inputCertName" placeholder="Certification Name"  v-model="newcertifs.certName"><br>
                     </div>
                     </div>
 
                     <div class="form-group">
-                    <label for="certification" class="control-label col-sm-2">Certification:</label>
+                    <label for="certAgency" class="control-label col-sm-10">Certification Agency</label>
                     <div class="col-sm-10">
-                      <select class="form-control" name="certification" id="inputCertification">
-                        <option selected=disabled>Certification</option>
-                        <option>CPR American Heart Association</option>
-                        <option>CPR American Red Cross</option>
-                        <option>Fire Fighter I Athens Technical College</option>
-                        <option>Fire Fighter I Ivy Tech</option>
-                        <option>POST</option>
-                      </select>
-                      <br>
+                    <input type="text" class="form-control" name="certAgency" id="inputCertAgency" placeholder="Certification Agency" v-model="newcertifs.certAgency"><br>
                     </div>
                     </div>
 
                     <div class="form-group">
-                    <label for="publisher" class="control-label col-sm-2">Date:</label>
+                    <label for="certification" class="control-label col-sm-10">Default Experation Period in Years</label>
                     <div class="col-sm-10">
-                    <input type="date" class="form-control" name="date" id="inputDate" placeholder="Date:"><br>
+                    <input type="integer" class="form-control" name="expPeriod" id="inputExpPeriod" placeholder="Defualt Experation Period in Years" v-model="newcertifs.expPeriod"><br>
+
                     </div>
                     </div>
 
-
-                    <center><button type="submit" class="btn btn-success">Update Certification</button></center>
+                    <center><button type="submit" class="btn btn-success">Create Certification</button></center>
 
                 </form>
 
                 <br>
             <center>
 
-              <div id="certifsApp">
+
                 <table id="taskTable"class="table">
           <thead class="card-body">
             <tr>
@@ -119,15 +104,39 @@
           <tbody class="card-body">
             <tr>
               <tr v-for="c in certifs" >
-                <td>{{ c.certID }}</td>
-                <td>{{ c.certName }}</td>
-                <td>{{ c.certAgency }}</td>
-                <td>{{ c.expPeriod }}</td>
+                <td>{{c.certID}}</td>
+                <td>{{c.certName}}</td>
+                <td>{{c.certAgency}}</td>
+                <td>{{c.expPeriod}}</td>
               </tr>
             </tbody>
           </table>
           </tbody>
         </table>
+        <h1> Delete Certification</h1>
+        <form @submit.prevent="handleDelete">
+
+              <!--  <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Renew</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Create New</label>
+                </div>
+                <br>
+                <br>o7
+              -->
+                <div class="form-group">
+                <label for="certName" class="control-label col-sm-10">Certification ID:</label>
+                <div class="col-sm-10">
+                <input type="number" class="form-control" name="certName" id="inputCertName" placeholder="Certification ID Number"  min="1" v-model="deletecertifs.certID"><br>
+                </div>
+                </div>
+
+                <center><button type="submit" class="btn btn-success">Delete Certification</button></center>
+
+            </form>
       </div>
               </center>
 
@@ -135,6 +144,11 @@
           </div>
         </div>
       </div>
+
+
+
+
+
 
 
       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
