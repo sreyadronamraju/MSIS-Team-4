@@ -11,17 +11,8 @@ var certifsApp = new Vue({
       .then(response => response.json())
       .then(json => { certifsApp.certifs = json });
     },
-    handleDelete(event){
-      fetch('api/certifs/postDelete.php',{
-        method: 'POST',
-        body: JSON.stringify(this.deletecertifs),
-        headers: {
-          "Content-Type": "application/json; charset=utf-8"
-        }
 
-      })
-    },
-
+    
     handleSubmit(event) {
       fetch('api/certifs/post.php', {
         method:'POST',
@@ -39,11 +30,23 @@ var certifsApp = new Vue({
       this.fetchCertifs();
       this.handleReset();
   },
+
+    handleDelete(event){
+      fetch('api/certifs/postDelete.php',{
+        method: 'POST',
+        body: JSON.stringify(this.deletecertifs),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+
+      })
+    },
+
     handleReset() {
       this.newcertifs = {
         certfName: '',
         certAgency: '',
-        expPeriod: '',
+        expPeriod: ''
       }
     }
   },
