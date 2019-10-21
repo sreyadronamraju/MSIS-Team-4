@@ -53,22 +53,12 @@ text-align:center;}
   border: 2px solid rgb(200,200,200);
 }
 
-.patientName {
-  font-weight: bold;
+/* table hover change color referenced from stack overflow */
+
+.table-hover tbody tr:hover td {
+  background-color: #eeeeea;
 }
 
-.highPriority {
-  border-left-color: red;
-  border-left-width: 6px;
+.force-height>div {
+  height: 500px;
 }
-
-.mediumPriority {
-  border-left-color: orange;
-  border-left-width: 6px;
-}
-
-.lowPriority {
-  border-left-color: blue;
-  border-left-width: 6px;
-}
-

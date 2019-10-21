@@ -50,3 +50,4 @@ INSERT INTO Person (firstName, lastName, sexAtBirth, dob, phoneNumber,email, dat
 --
 -- INSERT INTO PatientVisit (visitId, patientGuid, visitDescription) VALUES
 -- (1, 'SOME-REALLY-LONG-1234', 'Anxiety from D&S');
+
