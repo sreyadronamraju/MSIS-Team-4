@@ -13,8 +13,8 @@ $stmt = $db->prepare(
 );
 
 $stmt->execute([
-  $_POST['personID']
-  $_POST['certID']
+  $_POST['personID'],
+  $_POST['certID'],
   $_POST['certDate']
 ]);
 

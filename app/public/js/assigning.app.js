@@ -22,7 +22,6 @@ var assigningApp = new Vue({
 
       
       handleSubmit(event) {
-
         fetch('api/assigning/post.php', {
           method:'POST',
           body: JSON.stringify(this.personCert),
