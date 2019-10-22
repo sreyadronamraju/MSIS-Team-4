@@ -72,7 +72,7 @@
                 </thead>
 
                 <tbody class="card-body">
-                  <tr v-for="m in members">
+                  <tr v-for="m in members" @click="handleRowClick(m)">
                     <td>{{m.personID}}</td>
                     <td>{{m.firstName}}</td>
                     <td>{{m.lastName}}</td>
@@ -219,7 +219,7 @@
                   </div>
                 </div>
               </div>
-
+<!--EDIT MEMBER------------------------------------------------------------------>
               <div class="col-sm-6 mb-3 mb-md-0">
                 <div class="card">
                   <div class="card-body">
@@ -229,8 +229,7 @@
                         <div class="form-group">
                           <label for="firstName" class="control-label">First Name:</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" name="firstName" id="firstName"
-                              placeholder="Enter first name" v-model="newmember.firstName">
+                            <input type="text" class="form-control" name="firstName" id="firstName" v-model="member.firstName" readonly>
                             <br>
                           </div>
                         </div>
@@ -238,27 +237,22 @@
                         <div class="form-group">
                           <label for="lastName" class="control-label">Last Name:</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" name="lastName" id="lastName"
-                              placeholder="Enter last name" v-model="newmember.lastName"><br>
+                            <input type="text" class="form-control" name="lastName" id="lastName" v-model="member.lastName"><br>
                           </div>
                         </div>
 
                         <div class="form-group">
                           <label for="sexAtBirth" class="control-label">Sex at Birth:</label>
                           <div class="col-sm-10">
-                            <select class="form-control" name="sexAtBirth" id="sexAtBirth" placeholder="M | F"
-                              v-model="newmember.sexAtBirth">
-                              <option value="M">M</option>
-                              <option value="F">F</option>
-                            </select>
+                            <input type="text" class="form-control" name="sexAtBirth" id="sexAtBirth"                           v-model="member.sexAtBirth">
                             <br>
                           </div>
                         </div>
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                           <label for="dob" class="control-label">Date of Birth:</label>
                           <div class="col-sm-10">
-                            <input type="date" class="form-control" name="dob" id="dob" v-model="newmember.dob"><br>
+                            <input type="date" class="form-control" name="dob" id="dob" v-model="member.dob"><br>
                           </div>
                         </div>
 
@@ -266,7 +260,7 @@
                           <label for="phoneNumber" class="control-label">Phone No.:</label>
                           <div class="col-sm-10">
                             <input type="text" class="form-control" name="phoneNumber" id="phoneNumber"
-                              placeholder="Enter Phone No." v-model="newmember.phoneNumber"><br>
+                              placeholder="Enter Phone No." v-model="member.phoneNumber"><br>
                           </div>
                         </div>
 
@@ -274,7 +268,7 @@
                           <label for="email" class="control-label">Email ID:</label>
                           <div class="col-sm-10">
                             <input type="email" class="form-control" name="email" id="email"
-                              placeholder="Enter Email ID" v-model="newmember.email"><br>
+                              placeholder="Enter Email ID" v-model="member.email"><br>
                           </div>
                         </div>
 
@@ -282,7 +276,7 @@
                           <label for="dateHired" class="control-label">Date Hired:</label>
                           <div class="col-sm-10">
                             <input type="date" class="form-control" name="dateHired" id="dateHired"
-                              v-model="newmember.dateHired"><br>
+                              v-model="member.dateHired"><br>
                           </div>
                         </div>
 
@@ -290,7 +284,7 @@
                           <label for="position" class="control-label">Position:</label>
                           <div class="col-sm-10">
                             <input type="text" class="form-control" name="position" id="position"
-                              placeholder="Enter Position" v-model="newmember.position"><br>
+                              placeholder="Enter Position" v-model="member.position"><br>
                           </div>
                         </div>
 
@@ -298,7 +292,7 @@
                           <label for="isActive" class="control-label">Status:</label>
                           <div class="col-sm-10">
                             <select class="form-control" name="isActive" id="isActive" placeholder="0 | 1"
-                              v-model="newmember.isActive">
+                              v-model="member.isActive">
                               <option value="0">0</option>
                               <option value="1">1</option>
                             </select>
@@ -310,7 +304,7 @@
                           <label for="radioNumber" class="control-label">Radio No.:</label>
                           <div class="col-sm-10">
                             <select class="form-control" name="radioNumber" id="radioNumber"
-                              placeholder="Enter Radio No." v-model="newmember.radioNumber">
+                              placeholder="Enter Radio No." v-model="member.radioNumber">
                               <option value="15">15</option>
                               <option value="16">16</option>
                               <option value="17">17</option>
@@ -327,7 +321,7 @@
                           <label for="stationNumber" class="control-label">Station No.:</label>
                           <div class="col-sm-10">
                             <select class="form-control" name="stationNumber" id="stationNumber"
-                              placeholder="Enter Station No." v-model="newmember.stationNumber">
+                              placeholder="Enter Station No." v-model="member.stationNumber">
                               <option value="22">22</option>
                               <option value="23">23</option>
                               <option value="24">24</option>
@@ -337,7 +331,7 @@
 
                             <br>
                           </div>
-                        </div>
+                        </div> -->
 
                         <br>
                         <center><button type="submit" class="btn btn-success">Add member</button>
