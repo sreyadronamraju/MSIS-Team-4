@@ -49,32 +49,71 @@
         <div class="card border-0 shadow my-5">
             <div class="card-body p-5">
                 <div class="row">
-                    <div class="col-sm-3">
-                    <div id="memberApp">
-                        <h1 class="font-weight-light">Members</h1>
-                        <p class="lead">
-                            <center>
-                                <table id="taskTable" class="table table-sm table-hover table-responsive">
-                                    <thead class="card-body">
-                                        <tr>
-                                            <th class="text-center">ID</th>
-                                            <th class="text-center">First Name</th>
-                                            <th class="text-center">Last Name</th>
-                                        </tr>
-                                    </thead>
+                    <div class="col-sm-4">
+                        <div id="memberApp">
+                            <h1 class="font-weight-light">Members</h1>
+                            <p class="lead">
+                                <center>
+                                    <table id="taskTable" class="table table-sm table-hover table-responsive">
+                                        <thead class="card-body">
+                                            <tr>
+                                                <th class="text-center">ID</th>
+                                                <th class="text-center">First Name</th>
+                                                <th class="text-center">Last Name</th>
+                                            </tr>
+                                        </thead>
 
-                                    <tbody class="card-body">
-                                        <tr v-for="m in members">
-                                            <td>{{m.personID}}</td>
-                                            <td>{{m.firstName}}</td>
-                                            <td>{{m.lastName}}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </center>
-                            <br><br>
+                                        <tbody class="card-body">
+                                            <tr v-for="m in members">
+                                                <td>{{m.personID}}</td>
+                                                <td>{{m.firstName}}</td>
+                                                <td>{{m.lastName}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </center>
+                                <br><br>
+                        </div>
                     </div>
-                </div>
+                    <div class="col-sm-4">
+                        <div id="certifsApp">
+                            <h1 class="font-weight-light">Certifications</h1>
+                            <p class="lead">
+                                <center>
+                                    <table id="taskTable" class="table table-sm table-hover table-responsive">
+                                        <thead class="card-body">
+                                            <tr>
+                                                <th class="text-center">ID</th>
+                                                <th class="text-center">First Name</th>
+                                                <th class="text-center">Last Name</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody class="card-body">
+                                            <tr v-for="c in certifs">
+                                                <td>{{c.certID}}</td>
+                                                <td>{{c.certName}}</td>
+                                                <td>{{c.certAgency}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </center>
+                                <br><br>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 queueView">
+                        <h5 class="sideview">Member Certifications</h5>
+                        <!-- <div class="patient patientWaiting" :class="patient.priority + 'Priority'"
+                            v-for="patient in patients">
+                            {{ formatVisitDateLocal(patient.visitDateUtc) }}<br>
+                            <small>{{ visitDateSince(patient.visitDateUtc) }}</small><br>
+                            <span class="patientName">{{ patient.lastName }}</span>,
+                            <span class="patientName">{{ patient.firstName }}</span><br>
+                            {{ patient.sexAtBirth }} {{ patient.dob }}
+                        </div> -->
+                    </div>
+
                 </div>
 
                 <div class="row" id="assigningApp">
@@ -86,22 +125,26 @@
                                     <p class="card-text">
 
                                         <div class="form-group">
-                                            <label for="personID" class="control-label">Select Member ID:</label>
+                                            <label for="personID" class="control-label">Select Member
+                                                ID:</label>
                                             <div class="col-sm-10">
                                                 <select class="form-control" name="personID" id="personID"
                                                     v-model="members.personID">
-                                                    <option v-for="m in members" :value="m.personID">{{ m.personID }}
+                                                    <option v-for="m in members" :value="m.personID">
+                                                        {{ m.personID }}
                                                     </option>
                                                 </select>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="certID" class="control-label">Select Certificate ID:</label>
+                                            <label for="certID" class="control-label">Select Certificate
+                                                ID:</label>
                                             <div class="col-sm-10">
                                                 <select class="form-control" name="certID" id="certID"
                                                     v-model="certifs.certID">
-                                                    <option v-for="c in certifs" :value="c.certID">{{ c.certID }}
+                                                    <option v-for="c in certifs" :value="c.certID">
+                                                        {{ c.certID }}
                                                     </option>
                                                 </select>
                                             </div>
@@ -137,6 +180,7 @@
 
                 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
                 <script src="js/member.app.js"></script>
+                <script src="js/certifs.app.js"></script>
                 <script src="js/assigning.app.js"></script>
 
 
