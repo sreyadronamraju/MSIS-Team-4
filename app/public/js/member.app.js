@@ -2,6 +2,7 @@ var memberApp = new Vue({
   el: '#memberApp',
   data: {
     members: [],
+    editmember: {},
     newmember: {},
     deletemembers: {}
   },
@@ -38,6 +39,9 @@ var memberApp = new Vue({
         "Content-Type": "application/json; charset=utf-8"
       }
     })
+  },
+  handleRowClick(editmember) {
+    memberApp.editmember = editmember;
   },
 
   handleRowClick(member) {
