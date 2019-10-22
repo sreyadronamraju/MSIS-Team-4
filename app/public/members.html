@@ -229,7 +229,7 @@
                         <div class="form-group">
                           <label for="firstName" class="control-label">First Name:</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" name="firstName" id="firstName" v-model="member.firstName" readonly>
+                            <input type="text" class="form-control" name="firstName" id="firstName">
                             <br>
                           </div>
                         </div>
@@ -237,22 +237,22 @@
                         <div class="form-group">
                           <label for="lastName" class="control-label">Last Name:</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" name="lastName" id="lastName" v-model="member.lastName"><br>
+                            <input type="text" class="form-control" name="lastName" id="lastName"><br>
                           </div>
                         </div>
 
                         <div class="form-group">
                           <label for="sexAtBirth" class="control-label">Sex at Birth:</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" name="sexAtBirth" id="sexAtBirth"                           v-model="member.sexAtBirth">
+                            <input type="text" class="form-control" name="sexAtBirth" id="sexAtBirth"                          >
                             <br>
                           </div>
                         </div>
 
-                        <!-- <div class="form-group">
+                        <div class="form-group">
                           <label for="dob" class="control-label">Date of Birth:</label>
                           <div class="col-sm-10">
-                            <input type="date" class="form-control" name="dob" id="dob" v-model="member.dob"><br>
+                            <input type="date" class="form-control" name="dob" id="dob"><br>
                           </div>
                         </div>
 
@@ -260,7 +260,7 @@
                           <label for="phoneNumber" class="control-label">Phone No.:</label>
                           <div class="col-sm-10">
                             <input type="text" class="form-control" name="phoneNumber" id="phoneNumber"
-                              placeholder="Enter Phone No." v-model="member.phoneNumber"><br>
+                              ><br>
                           </div>
                         </div>
 
@@ -268,15 +268,14 @@
                           <label for="email" class="control-label">Email ID:</label>
                           <div class="col-sm-10">
                             <input type="email" class="form-control" name="email" id="email"
-                              placeholder="Enter Email ID" v-model="member.email"><br>
+                              ><br>
                           </div>
                         </div>
 
                         <div class="form-group">
                           <label for="dateHired" class="control-label">Date Hired:</label>
                           <div class="col-sm-10">
-                            <input type="date" class="form-control" name="dateHired" id="dateHired"
-                              v-model="member.dateHired"><br>
+                            <input type="date" class="form-control" name="dateHired" id="dateHired"><br>
                           </div>
                         </div>
 
@@ -284,15 +283,14 @@
                           <label for="position" class="control-label">Position:</label>
                           <div class="col-sm-10">
                             <input type="text" class="form-control" name="position" id="position"
-                              placeholder="Enter Position" v-model="member.position"><br>
+                              ><br>
                           </div>
                         </div>
 
                         <div class="form-group">
                           <label for="isActive" class="control-label">Status:</label>
                           <div class="col-sm-10">
-                            <select class="form-control" name="isActive" id="isActive" placeholder="0 | 1"
-                              v-model="member.isActive">
+                            <select class="form-control" name="isActive" id="isActive">
                               <option value="0">0</option>
                               <option value="1">1</option>
                             </select>
@@ -304,7 +302,7 @@
                           <label for="radioNumber" class="control-label">Radio No.:</label>
                           <div class="col-sm-10">
                             <select class="form-control" name="radioNumber" id="radioNumber"
-                              placeholder="Enter Radio No." v-model="member.radioNumber">
+                              placeholder="Enter Radio No.">
                               <option value="15">15</option>
                               <option value="16">16</option>
                               <option value="17">17</option>
@@ -321,7 +319,7 @@
                           <label for="stationNumber" class="control-label">Station No.:</label>
                           <div class="col-sm-10">
                             <select class="form-control" name="stationNumber" id="stationNumber"
-                              placeholder="Enter Station No." v-model="member.stationNumber">
+                              >
                               <option value="22">22</option>
                               <option value="23">23</option>
                               <option value="24">24</option>
@@ -331,10 +329,10 @@
 
                             <br>
                           </div>
-                        </div> -->
+                        </div> 
 
                         <br>
-                        <center><button type="submit" class="btn btn-success">Add member</button>
+                        <center><button type="submit" class="btn btn-success">Edit member</button>
                         </center>
                       </p>
                     </form>
