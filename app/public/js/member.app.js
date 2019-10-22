@@ -40,6 +40,10 @@ var memberApp = new Vue({
     })
   },
 
+  handleRowClick(member) {
+    memberApp.patient = patient;
+  }
+
     handleReset() {
       this.newmember = {
         firstName: '',
