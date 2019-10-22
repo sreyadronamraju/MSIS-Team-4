@@ -2,7 +2,8 @@ var memberApp = new Vue({
   el: '#memberApp',
   data: {
     members: [],
-    newmember: {}
+    newmember: {},
+    deletemembers: {}
   },
   methods: {
     fetchMembers() {
@@ -28,6 +29,17 @@ var memberApp = new Vue({
       this.fetchMembers();
       this.handleReset();
   },
+
+  handleDelete(event){
+    fetch('api/members/postDelete.php',{
+      method: 'POST',
+      body: JSON.stringify(this.deletemembers),
+      headers: {
+        "Content-Type": "application/json; charset=utf-8"
+      }
+    })
+  },
+
     handleReset() {
       this.newmember = {
         firstName: '',
@@ -41,7 +53,7 @@ var memberApp = new Vue({
         isActive: '',
         radioNumber: '',
         stationNumber: ''
-      }
+              }
     }
   },
   created() {
