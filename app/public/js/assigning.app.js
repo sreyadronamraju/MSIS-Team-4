@@ -34,7 +34,7 @@ var assigningApp = new Vue({
         .catch( err => {
           console.error('RECORD POST ERROR:');
           console.error(err);
-        });
+        })
         this.fetchMembers();
         this.fetchCertifs();
         this.handleReset();

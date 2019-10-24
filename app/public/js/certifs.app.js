@@ -26,7 +26,7 @@ var certifsApp = new Vue({
       .catch( err => {
         console.error('RECORD POST ERROR:');
         console.error(err);
-      });
+      })
       this.fetchCertifs();
       this.handleReset();
   },

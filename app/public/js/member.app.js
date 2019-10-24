@@ -3,7 +3,8 @@ var memberApp = new Vue({
   data: {
     members: [],
     newmember: {},
-    deletemembers: {}
+    deletemembers: {},
+    editmembers: {}
   },
   methods: {
     fetchMembers() {
@@ -25,9 +26,20 @@ var memberApp = new Vue({
       .catch( err => {
         console.error('RECORD POST ERROR:');
         console.error(err);
-      });
+      })
       this.fetchMembers();
       this.handleReset();
+  },
+
+  handleEdit(event){
+    fetch('api/members/postEdit.php',{
+      method: 'POST',
+      body: JSON.stringify(this.editmembers),
+      headers: {
+        "Content-Type": "application/json; charset=utf-8"
+      }
+    })
+    this.fetchMembers();
   },
 
   handleDelete(event){
@@ -38,9 +50,11 @@ var memberApp = new Vue({
         "Content-Type": "application/json; charset=utf-8"
       }
     })
+    this.fetchMembers();
   },
-  handleRowClick(editmember) {
-    memberApp.editmember = editmember;
+  
+  handleRowClick(editmembers) {
+    memberApp.editmembers = editmembers;
   },
 
     handleReset() {
