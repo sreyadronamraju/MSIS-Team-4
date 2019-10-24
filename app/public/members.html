@@ -72,7 +72,7 @@
                 </thead>
 
                 <tbody class="card-body">
-                  <tr v-for="m in members">
+                  <tr v-for="m in members" @click="handleRowClick(m)">
                     <td>{{m.personID}}</td>
                     <td>{{m.firstName}}</td>
                     <td>{{m.lastName}}</td>
@@ -219,17 +219,18 @@
                   </div>
                 </div>
               </div>
-<!--EDIT MEMBER------------------------------------------------------------------>
+              <!--EDIT MEMBER------------------------------------------------------------------>
               <div class="col-sm-6 mb-3 mb-md-0">
                 <div class="card">
                   <div class="card-body">
                     <h5 class="card-title">Edit Member:</h5>
-                    <form @submit.prevent="handleSubmit">
+                    <form @submit.prevent="handleEdit">
                       <p class="card-text">
                         <div class="form-group">
                           <label for="firstName" class="control-label">First Name:</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" name="firstName" id="firstName">
+                            <input type="text" class="form-control" name="firstName" id="editfirstName"
+                              v-model="editmembers.firstName">
                             <br>
                           </div>
                         </div>
@@ -237,14 +238,16 @@
                         <div class="form-group">
                           <label for="lastName" class="control-label">Last Name:</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" name="lastName" id="lastName"><br>
+                            <input type="text" class="form-control" name="lastName" id="editlastName"
+                              v-model="editmembers.lastName"><br>
                           </div>
                         </div>
 
                         <div class="form-group">
                           <label for="sexAtBirth" class="control-label">Sex at Birth:</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" name="sexAtBirth" id="sexAtBirth"                          >
+                            <input type="text" class="form-control" name="sexAtBirth" id="editsexAtBirth"
+                              v-model="editmembers.sexAtBirth">
                             <br>
                           </div>
                         </div>
@@ -252,45 +255,48 @@
                         <div class="form-group">
                           <label for="dob" class="control-label">Date of Birth:</label>
                           <div class="col-sm-10">
-                            <input type="date" class="form-control" name="dob" id="dob"><br>
+                            <input type="date" class="form-control" name="dob" id="editdob"
+                              v-model="editmembers.dob"><br>
                           </div>
                         </div>
 
                         <div class="form-group">
                           <label for="phoneNumber" class="control-label">Phone No.:</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" name="phoneNumber" id="phoneNumber"
-                              ><br>
+                            <input type="text" class="form-control" name="phoneNumber" id="editphoneNumber"
+                              v-model="editmembers.phoneNumber"><br>
                           </div>
                         </div>
 
                         <div class="form-group">
                           <label for="email" class="control-label">Email ID:</label>
                           <div class="col-sm-10">
-                            <input type="email" class="form-control" name="email" id="email"
-                              ><br>
+                            <input type="email" class="form-control" name="email" id="editemail"
+                              v-model="editmembers.email"><br>
                           </div>
                         </div>
 
                         <div class="form-group">
                           <label for="dateHired" class="control-label">Date Hired:</label>
                           <div class="col-sm-10">
-                            <input type="date" class="form-control" name="dateHired" id="dateHired"><br>
+                            <input type="date" class="form-control" name="dateHired" id="editdateHired"
+                              v-model="editmembers.dateHired"><br>
                           </div>
                         </div>
 
                         <div class="form-group">
                           <label for="position" class="control-label">Position:</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" name="position" id="position"
-                              ><br>
+                            <input type="text" class="form-control" name="position" id="editposition"
+                              v-model="editmembers.position"><br>
                           </div>
                         </div>
 
                         <div class="form-group">
                           <label for="isActive" class="control-label">Status:</label>
                           <div class="col-sm-10">
-                            <select class="form-control" name="isActive" id="isActive">
+                            <select class="form-control" name="isActive" id="editisActive"
+                              v-model="editmembers.isActive">
                               <option value="0">0</option>
                               <option value="1">1</option>
                             </select>
@@ -301,8 +307,8 @@
                         <div class="form-group">
                           <label for="radioNumber" class="control-label">Radio No.:</label>
                           <div class="col-sm-10">
-                            <select class="form-control" name="radioNumber" id="radioNumber"
-                              placeholder="Enter Radio No.">
+                            <select class="form-control" name="radioNumber" id="editradioNumber"
+                              v-model="editmembers.radioNumber">
                               <option value="15">15</option>
                               <option value="16">16</option>
                               <option value="17">17</option>
@@ -318,8 +324,8 @@
                         <div class="form-group">
                           <label for="stationNumber" class="control-label">Station No.:</label>
                           <div class="col-sm-10">
-                            <select class="form-control" name="stationNumber" id="stationNumber"
-                              >
+                            <select class="form-control" name="stationNumber" id="editstationNumber"
+                              v-model="editmembers.stationNumber">
                               <option value="22">22</option>
                               <option value="23">23</option>
                               <option value="24">24</option>
@@ -329,7 +335,7 @@
 
                             <br>
                           </div>
-                        </div> 
+                        </div>
 
                         <br>
                         <center><button type="submit" class="btn btn-success">Edit member</button>
@@ -340,36 +346,36 @@
                 </div>
               </div>
             </div>
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Delete Member:</h5>
-                  <form @submit.prevent="handleDelete">
-                    <p class="card-text">
-                      <div class="form-group">
-                        <label for="personID" class="control-label">Select Member ID:</label>
-                        <div class="col-sm-10">
+            <!-- Delete Member ------------------------------------------------------------------------->
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Delete Member:</h5>
+                <form @submit.prevent="handleDelete">
+                  <p class="card-text">
+                    <div class="form-group">
+                      <label for="personID" class="control-label">Select Member ID:</label>
+                      <div class="col-sm-10">
 
-                          <select class="form-control" name="personID" id="delpersonID"
-                            v-model="deletemembers.personID">
-                            <option v-for="m in members" :value="m.personID">{{ m.personID }}</option>
-                          </select>
-                          <!--
+                        <select class="form-control" name="personID" id="delpersonID" v-model="deletemembers.personID">
+                          <option v-for="m in members" :value="m.personID">{{ m.personID }}</option>
+                        </select>
+                        <!--
                           <input type="number" class="form-control" name="personID" id="delpersonID" placeholder="Member ID"  min="1" v-model="deletemembers.personID">
                           --><br>
-                        </div>
                       </div>
-                      <center><button type="submit" class="btn btn-success">Delete Member</button></center>
+                    </div>
+                    <center><button type="submit" class="btn btn-success">Delete Member</button></center>
 
-                  </form>
+                </form>
 
-                </div>
               </div>
-
             </div>
+
         </div>
       </div>
     </div>
-  
+  </div>
+
 
 
 
