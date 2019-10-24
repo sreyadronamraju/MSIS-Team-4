@@ -20,6 +20,12 @@ var assigningApp = new Vue({
         .then(json => { assigningApp.certifs = json });
       },
 
+      fetchPersonCertifs() {
+        fetch('api/assigning/index.php')
+        .then(response => response.json())
+        .then(json => { assigningApp.pCert = json });
+      },
+
       
       handleSubmit(event) {
         fetch('api/assigning/post.php', {
@@ -37,6 +43,7 @@ var assigningApp = new Vue({
         })
         this.fetchMembers();
         this.fetchCertifs();
+        this.fetchPersonCertifs();
         this.handleReset();
     },
   
@@ -48,10 +55,16 @@ var assigningApp = new Vue({
         }
       }
     },
+
+    handleRowClick(member) {
+      assignApp.member = member;
+    },
+
     created() {
       this.handleReset();
       this.fetchMembers();
       this.fetchCertifs();
+      this.fetchPersonCertifs();
     }
   });
   

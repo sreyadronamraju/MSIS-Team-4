@@ -45,78 +45,77 @@
     </nav>
 
     <!-- Page Content navigation layout from https://startbootstrap.com/snippets/full-image-background/ -->
-    <div class="container">
+    <div class="container" id="assigningApp">
         <div class="card border-0 shadow my-5">
             <div class="card-body p-5">
                 <div class="row">
                     <div class="col-sm-4">
-                        <div id="memberApp">
-                            <h1 class="font-weight-light">Members</h1>
-                            <p class="lead">
-                                <center>
-                                    <table id="taskTable" class="table table-sm table-hover table-responsive">
-                                        <thead class="card-body">
-                                            <tr>
-                                                <th class="text-center">ID</th>
-                                                <th class="text-center">First Name</th>
-                                                <th class="text-center">Last Name</th>
-                                            </tr>
-                                        </thead>
+                        <!-- <div id="memberApp"> -->
+                        <h1 class="font-weight-light">Members</h1>
+                        <p class="lead">
+                            <center>
+                                <table id="taskTable" class="table table-sm table-hover table-responsive">
+                                    <thead class="card-body">
+                                        <tr>
+                                            <th class="text-center">ID</th>
+                                            <th class="text-center">First Name</th>
+                                            <th class="text-center">Last Name</th>
+                                        </tr>
+                                    </thead>
 
-                                        <tbody class="card-body">
-                                            <tr v-for="m in members">
-                                                <td>{{m.personID}}</td>
-                                                <td>{{m.firstName}}</td>
-                                                <td>{{m.lastName}}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </center>
-                                <br><br>
-                        </div>
+                                    <tbody class="card-body">
+                                        <tr v-for="m in members" @click="handleRowClick(m)">
+                                            <td>{{m.personID}}</td>
+                                            <td>{{m.firstName}}</td>
+                                            <td>{{m.lastName}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </center>
+                            <br><br>
+                            <!-- </div> -->
                     </div>
                     <div class="col-sm-4">
-                        <div id="certifsApp">
-                            <h1 class="font-weight-light">Certifications</h1>
-                            <p class="lead">
-                                <center>
-                                    <table id="taskTable" class="table table-sm table-hover table-responsive">
-                                        <thead class="card-body">
-                                            <tr>
-                                                <th class="text-center">ID</th>
-                                                <th class="text-center">Title</th>
-                                                <th class="text-center">Agency</th>
-                                            </tr>
-                                        </thead>
+                        <!-- <div id="certifsApp"> -->
+                        <h1 class="font-weight-light">Certifications</h1>
+                        <p class="lead">
+                            <center>
+                                <table id="taskTable" class="table table-sm table-hover table-responsive">
+                                    <thead class="card-body">
+                                        <tr>
+                                            <th class="text-center">ID</th>
+                                            <th class="text-center">Title</th>
+                                            <th class="text-center">Agency</th>
+                                        </tr>
+                                    </thead>
 
-                                        <tbody class="card-body">
-                                            <tr v-for="c in certifs">
-                                                <td>{{c.certID}}</td>
-                                                <td>{{c.certName}}</td>
-                                                <td>{{c.certAgency}}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </center>
-                                <br><br>
-                        </div>
+                                    <tbody class="card-body">
+                                        <tr v-for="c in certifs">
+                                            <td>{{c.certID}}</td>
+                                            <td>{{c.certName}}</td>
+                                            <td>{{c.certAgency}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </center>
+                            <br><br>
+                            <!-- </div> -->
                     </div>
 
-                    <div class="col-md-4 queueView">
-                        <h5 class="sideview">Member Certifications</h5>
-                        <!-- <div class="patient patientWaiting" :class="patient.priority + 'Priority'"
-                            v-for="patient in patients">
-                            {{ formatVisitDateLocal(patient.visitDateUtc) }}<br>
-                            <small>{{ visitDateSince(patient.visitDateUtc) }}</small><br>
-                            <span class="patientName">{{ patient.lastName }}</span>,
-                            <span class="patientName">{{ patient.firstName }}</span><br>
-                            {{ patient.sexAtBirth }} {{ patient.dob }}
-                        </div> -->
+
+                    <div class="col-md-4 queueView sideview">
+                        <h5>Member Certifications</h5>
+                        <div v-for="p in pCert">
+                            {{ p.personID }}<br>
+                            {{ p.certID }}<br>
+                            {{ p.certDate }}<br><br>
+
+                        </div>
                     </div>
 
                 </div>
 
-                <div class="row" id="assigningApp">
+                <div class="row">
                     <div class="col-sm-6">
                         <div class="card">
                             <div class="card-body">
@@ -179,8 +178,8 @@
 
 
                 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-                <script src="js/member.app.js"></script>
-                <script src="js/certifs.app.js"></script>
+                <!-- <script src="js/member.app.js"></script>
+                <script src="js/certifs.app.js"></script> -->
                 <script src="js/assigning.app.js"></script>
 
 
