@@ -3,7 +3,8 @@ var certifsApp = new Vue({
   data: {
     certifs: [],
     newcertifs: {},
-    deletecertifs:{}
+    deletecertifs:{},
+    editcertifs:{}
   },
   methods: {
     fetchCertifs() {
@@ -12,7 +13,17 @@ var certifsApp = new Vue({
       .then(json => { certifsApp.certifs = json });
     },
 
-    
+    handleEdit(event){
+      fetch('api/certifs/postUpdate.php',{
+        method: 'POST',
+        body: JSON.stringify(this.editcertifs),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+
+      })
+    },
+
     handleSubmit(event) {
       fetch('api/certifs/post.php', {
         method:'POST',

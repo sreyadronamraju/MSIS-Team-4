@@ -159,6 +159,50 @@
                 </div>
               </div>
             </div>
+            <!--EDIT MEMBER------------------------------------------------------------------>
+                          <div class="col-sm-6 mb-3 mb-md-0">
+                            <div class="card">
+                              <div class="card-body">
+                                <h5 class="card-title">Edit Certification:</h5>
+                                <form @submit.prevent="handleEdit">
+                                  <p class="card-text">
+                                    <div class="form-group">
+                                      <label for="firstName" class="control-label">Certification ID:</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" v-model="editcertifs.certID" name="editCertID" id="editCertID">
+                                        <br>
+                                      </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label for="lastName" class="control-label">Certification Name:</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control"  v-model="editcertifs.certName" name="editCertName" id="editCertName"><br>
+                                      </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label for="sexAtBirth" class="control-label">Certification Agency:</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="editCertAgency" id="editCertAgency"      v-model="editcertifs.certAgency"                    >
+                                        <br>
+                                      </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label for="dob" class="control-label">Default Experation Period:</label>
+                                      <div class="col-sm-10">
+                                        <input type="number" class="form-control" name="editEXP" id="editEXP"     v-model="editcertifs.expPeriod" ><br>
+                                      </div>
+                                    </div>
+                                    <br>
+                                    <center><button type="submit" class="btn btn-success">Edit Certification</button>
+                                    </center>
+                                  </p>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
           </div>
         </div>
       </div>
