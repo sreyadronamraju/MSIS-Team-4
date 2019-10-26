@@ -50,7 +50,6 @@
             <div class="card-body p-5">
                 <div class="row">
                     <div class="col-sm-4">
-                        <!-- <div id="memberApp"> -->
                         <h1 class="font-weight-light">Members</h1>
                         <p class="lead">
                             <center>
@@ -64,7 +63,8 @@
                                     </thead>
 
                                     <tbody class="card-body">
-                                        <tr v-for="m in members" @click="handleRowClick(m)">
+                                        <tr v-for="m in members">
+                                            <!-- @click="handleRowClick(m)" -->
                                             <td>{{m.personID}}</td>
                                             <td>{{m.firstName}}</td>
                                             <td>{{m.lastName}}</td>
@@ -76,7 +76,6 @@
                             <!-- </div> -->
                     </div>
                     <div class="col-sm-4">
-                        <!-- <div id="certifsApp"> -->
                         <h1 class="font-weight-light">Certifications</h1>
                         <p class="lead">
                             <center>
@@ -99,24 +98,9 @@
                                 </table>
                             </center>
                             <br><br>
-                            <!-- </div> -->
                     </div>
 
-
-                    <div class="col-md-4 queueView sideview">
-                        <h5>Member Certifications</h5>
-                        <div v-for="p in pCert">
-                            {{ p.personID }}<br>
-                            {{ p.certID }}<br>
-                            {{ p.certDate }}<br><br>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Assign Certification to Member:</h5>
@@ -150,7 +134,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="certDate" class="control-label">Select Certificate Start
+                                            <label for="certDate" class="control-label">Select Certification Expiry
                                                 Date:</label>
                                             <div class="col-sm-10">
                                                 <input type="date" class="form-control" name="certDate" id="certDate"
@@ -172,15 +156,39 @@
                     </div>
                 </div>
 
+                <div class="row">
+
+                    <div class="col-md-6 queueView sideview">
+                        <h5>Member Certifications</h5>
+                        <small>Select Member ID from the dropdown to view details of his/her certifications: </small>
+                        <div class="filter">
+                            <select class="form-control" name="personID" id="personID" v-model="filter.pc">
+                                <option v-for="m in members" :value="m.personID">
+                                    {{ m.personID }}
+                                </option>
+                            </select>
+                        </div><br>
+                        <div v-for="p in pcerts" v-if="filter.pc=='' || filter.pc == p.personID">
+                            <span class=label>{{ p.personID }} &nbsp; {{ p.firstName }} {{p.lastName}} </span> <br>
+                            Certification: {{ p.certName }}<br>
+                            Expiry Date: {{ p.certDate }}<br>
+                            <br>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
 
 
 
 
 
-                <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-                <!-- <script src="js/member.app.js"></script>
-                <script src="js/certifs.app.js"></script> -->
-                <script src="js/assigning.app.js"></script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="js/assigning.app.js"></script>
 
 
 
