@@ -1,20 +1,16 @@
-var reportApp = new Vue({
-  el: '#reportApp',
+var memberApp = new Vue({
+  el: '#memberApp',
   data: {
     members: [],
-    membercert: {},
-    certs:{}
+    newmember: {},
+    deletemembers: {},
+    editmembers: {}
   },
   methods: {
-    fetchCerts() {
-      fetch('api/report/index.php')
+    fetchMembers() {
+      fetch('api/members/index.php')
       .then(response => response.json())
-      .then(json => { reportApp.certs = json });
-    },
-    fetchMemberCerts() {
-      fetch('api/report/indexPersonCert.php')
-      .then(response => response.json())
-      .then(json => { reportApp.membercert = json });
+      .then(json => { memberApp.members = json });
     },
 
     handleSubmit(event) {
@@ -30,10 +26,39 @@ var reportApp = new Vue({
       .catch( err => {
         console.error('RECORD POST ERROR:');
         console.error(err);
-      });
+      })
       this.fetchMembers();
       this.handleReset();
   },
+
+  handleEdit(event){
+    fetch('api/members/postEdit.php',{
+      method: 'POST',
+      body: JSON.stringify(this.editmembers),
+      headers: {
+        "Content-Type": "application/json; charset=utf-8"
+      }
+    })
+    this.fetchMembers();
+    this.handleReset();
+  },
+
+  handleDelete(event){
+    fetch('api/members/postDelete.php',{
+      method: 'POST',
+      body: JSON.stringify(this.deletemembers),
+      headers: {
+        "Content-Type": "application/json; charset=utf-8"
+      }
+    })
+    this.fetchMembers();
+    this.handleReset();
+  },
+  
+  handleRowClick(editmembers) {
+    memberApp.editmembers = editmembers;
+  },
+
     handleReset() {
       this.newmember = {
         firstName: '',
@@ -47,12 +72,11 @@ var reportApp = new Vue({
         isActive: '',
         radioNumber: '',
         stationNumber: ''
-      }
+              }
     }
   },
   created() {
-    this.fetchCerts();
     this.handleReset();
-    this.fetchMemberCerts();
+    this.fetchMembers();    
   }
 });

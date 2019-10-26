@@ -1,173 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>My Page Title</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Certifications</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/site.css">
 </head>
+
 <body>
-    <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top mb-5 shadow">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-              <img src="./img/logo.png" class="logo" alt="">
-              Oconee County Fire Rescue</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home
-                      <span class="sr-only">(current)</span>
-                    </a>
-              </li>
-              <li class="nav-item">
-                    <a class="nav-link" href="members.html">Members</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="certifs.html">Certifications</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="report.html">Reports</a>
-                    </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top mb-5 shadow">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="./img/logo.png" class="logo" alt="">
+        Oconee County Fire Rescue</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="members.html">Members</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="certifs.html">Certifications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="assigncertifs.html">Assign Certifications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="report.html">Reports</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-      <!-- Page Content navigation layout from https://startbootstrap.com/snippets/full-image-background/ -->
+  <!-- Page Content navigation layout from https://startbootstrap.com/snippets/full-image-background/ -->
 
-
-      <div class="container">
-        <div class="card border-0 shadow my-5">
-          <div class="card-body p-5">
-            <h1 class="font-weight-light">Update Certification</h1>
-
-
-            <!-- Form and table are created using bootstrap -->
-            <form action="" method="post" class="form-horizontal">
-
-                    <div class="form-group">
-                    <label for="firstName" class="control-label col-sm-2">First Name:</label>
-                    <div class="col-sm-10">
-                    <input type="text" class="form-control" name="firstName" id="inputFirstName" placeholder="First Name"><br>
-                    </div>
-                    </div>
-
-                    <div class="form-group">
-                    <label for="LastName" class="control-label col-sm-2">Last Name:</label>
-                    <div class="col-sm-10">
-                    <input type="text" class="form-control" name="firstName" id="inputLastName" placeholder="Last Name"><br>
-                    </div>
-                    </div>
-
-                    <div class="form-group">
-                    <label for="certification" class="control-label col-sm-2">Certification:</label>
-                    <div class="col-sm-10">
-                      <select class="form-control" name="certification" id="inputCertification">
-                        <option selected=disabled>Certification</option>
-                        <option>CPR AHA</option>
-                        <option>CPR Red Cross</option>
-                        <option>Fire Fighter ATC</option>
-                        <option>Fire Fighter Ivy Tech</option>
-                        <option>POST</option>
-                      </select>
-                      <br>
-                    </div>
-                    </div>
-
-                    <div class="form-group">
-                    <label for="publisher" class="control-label col-sm-2">Date:</label>
-                    <div class="col-sm-10">
-                    <input type="date" class="form-control" name="date" id="inputDate" placeholder="Date:"><br>
-                    </div>
-                    </div>
-
-
-                    <button type="submit" class="btn btn-success">Update Certification</button>
-
-                </form>
-
-                <br>
-            <center>
-
-
-                <table id="taskTable"class="table">
-          <thead class="card-body">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Certification Name</th>
-              <th scope="col">Certification Agency</th>
-              <th scope="col">Default Expiration Period</th>
-              <!-- <th scope="col">Page Count</th>
+  <div id="certifsApp">
+    <div class="container">
+      <div class="card border-0 shadow my-5">
+        <div class="card-body p-5">
+          <center>
+            <table id="taskTable" class="table">
+              <thead class="card-body">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Certification Name</th>
+                  <th scope="col">Certification Agency</th>
+                  <th scope="col">Default Expiration Period</th>
+                  <!-- <th scope="col">Page Count</th>
               <th scope="col">MSRP</th> -->
-            </tr>
-          </thead>
-          <tbody class="card-body">
-            <tr>
-              <th scope="row">1</th>
-              <td>CPR AHA</td>
-              <td>Healthcaare Providers/American Heart Association</td>
-              <td>2 Years</td>
-              <!-- <td>256</td>
-              <td>14.95</td> -->
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>CPR Red Cross</td>
-              <td>Professional Rescuer/American Red Cross</td>
-              <td>2 Years</td>
-              <!-- <td>256</td>
-              <td>14.95</td> -->
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Fire Fighter ATC</td>
-              <td>Athens Technical College</td>
-              <td>3 Years</td>
-              <!-- <td>256</td>
-              <td>14.95</td> -->
-            </tr>
-            <tr>
-              <th scope="row">4</th>
-              <td>Fire Fighter Ivy Tech</td>
-              <td>Ivy Technical College</td>
-              <td>3 Years</td>
-              <!-- <td>256</td>
-              <td>14.95</td> -->
-            </tr>
-            <tr>
-              <th scope="row">5</th>
-              <td>POST</td>
-              <td>Georgia POST Academy</td>
-              <td>5 Years</td>
-              <!-- <td>256</td>
-              <td>14.95</td> -->
-            </tr>
-            <tr>
-              <th scope="row">1</th>
-              <td>POST</td>
-              <td>Georgia POST Academy</td>
-              <td>5 Years</td>
-              <!-- <td>256</td>
-              <td>14.95</td> -->
-            </tr>
+                </tr>
+              </thead>
+              <tbody class="card-body">
+                <tr>
+                <tr v-for="c in certifs">
+                  <td>{{c.certID}}</td>
+                  <td>{{c.certName}}</td>
+                  <td>{{c.certAgency}}</td>
+                  <td>{{c.expPeriod}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </center>
 
-          </tbody>
-        </table>
+          <div class="row" id="assigningApp">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h1 class="font-weight-light">Create Certification</h1>
+                  <!-- Form and table are created using bootstrap -->
+                  <form @submit.prevent="handleSubmit">
 
-              </center>
-            <div style="height: 700px"></div>
+                    <!--  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Renew</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">Create New</label>
+                    </div>
+                    <br>
+                    <br>o7
+                  -->
+                    <div class="form-group">
+                      <label for="certName" class="control-label col-sm-10">Certification Name:</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="certName" id="inputCertName"
+                          placeholder="Certification Name" v-model="newcertifs.certName"><br>
+                      </div>
+                    </div>
 
+                    <div class="form-group">
+                      <label for="certAgency" class="control-label col-sm-10">Certification Agency</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="certAgency" id="inputCertAgency"
+                          placeholder="Certification Agency" v-model="newcertifs.certAgency"><br>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="certification" class="control-label col-sm-10">Default Experation Period in
+                        Years</label>
+                      <div class="col-sm-10">
+                        <input type="integer" class="form-control" name="expPeriod" id="inputExpPeriod"
+                          placeholder="Defualt Experation Period in Years" v-model="newcertifs.expPeriod"><br>
+
+                      </div>
+                    </div>
+
+                    <center><button type="submit" class="btn btn-success">Create Certification</button></center>
+
+                  </form>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+
+                  <h1> Delete Certification</h1>
+                  <form @submit.prevent="handleDelete">
+
+                    <!--  <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Renew</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Create New</label>
+                </div>
+                <br>
+                <br>o7
+              -->
+                    <div class="form-group">
+                      <label for="certName" class="control-label col-sm-10">Certification ID:</label>
+                      <div class="col-sm-10">
+                        <input type="number" class="form-control" name="certName" id="inputCertName"
+                          placeholder="Certification ID Number" min="1" v-model="deletecertifs.certID"><br>
+                      </div>
+                    </div>
+
+                    <center><button type="submit" class="btn btn-success">Delete Certification</button></center>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!--EDIT MEMBER------------------------------------------------------------------>
+                          <div class="col-sm-6 mb-3 mb-md-0">
+                            <div class="card">
+                              <div class="card-body">
+                                <h5 class="card-title">Edit Certification:</h5>
+                                <form @submit.prevent="handleEdit">
+                                  <p class="card-text">
+                                    <div class="form-group">
+                                      <label for="firstName" class="control-label">Certification ID:</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" v-model="editcertifs.certID" name="editCertID" id="editCertID">
+                                        <br>
+                                      </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label for="lastName" class="control-label">Certification Name:</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control"  v-model="editcertifs.certName" name="editCertName" id="editCertName"><br>
+                                      </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label for="sexAtBirth" class="control-label">Certification Agency:</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="editCertAgency" id="editCertAgency"      v-model="editcertifs.certAgency"                    >
+                                        <br>
+                                      </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label for="dob" class="control-label">Default Experation Period:</label>
+                                      <div class="col-sm-10">
+                                        <input type="number" class="form-control" name="editEXP" id="editEXP"     v-model="editcertifs.expPeriod" ><br>
+                                      </div>
+                                    </div>
+                                    <br>
+                                    <center><button type="submit" class="btn btn-success">Edit Certification</button>
+                                    </center>
+                                  </p>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
 
 
+  <script src="js/tablesort.min.js"></script>
+  <script>
+
+    // tablesort plugin from https://github.com/tristen/tablesort
+    new Tablesort(document.getElementById('taskTable'));
+  </script>
 
 
-      </body>
-      </html>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/certifs.app.js"></script>
+  <script src="js/tablesort.min.js"></script>
+  <script>
+
+    // tablesort plugin from https://github.com/tristen/tablesort
+    new Tablesort(document.getElementById('taskTable'));
+  </script>
+
+</body>
+
+</html>

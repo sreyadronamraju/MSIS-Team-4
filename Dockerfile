@@ -2,9 +2,9 @@ FROM php:7.3.8-apache
 # We could use `httpd:2.4`, as we don't need PHP right now, but the config files
 # in that image are in a different place. This is easier in the long run.
 
-LABEL maintainer="Tom Gregory"
+LABEL maintainer="Team 4"
 
-# Install Composer
+# Install Composer  (http://getcomposer.org)
 RUN curl -o /tmp/composer-setup.php https://getcomposer.org/installer \
     && curl -o /tmp/composer-setup.sig https://composer.github.io/installer.sig \
     && php -r "if (hash('SHA384', file_get_contents('/tmp/composer-setup.php')) \

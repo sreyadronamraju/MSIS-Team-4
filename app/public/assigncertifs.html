@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Assign Certifications</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/site.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top mb-5 shadow">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="./img/logo.png" class="logo" alt="">
+                Oconee County Fire Rescue</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="members.html">Members</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="certifs.html">Certifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="assigncertifs.html">Assign Certifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="report.html">Reports</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content navigation layout from https://startbootstrap.com/snippets/full-image-background/ -->
+    <div class="container" id="assigningApp">
+        <div class="card border-0 shadow my-5">
+            <div class="card-body p-5">
+                <div class="row">
+                    <!-- <div class="col-sm-3">
+
+                        <h1 class="font-weight-light">Members</h1>
+                        <p class="lead">
+                            <center>
+                                <table id="taskTable" class="table table-sm table-hover table-responsive">
+                                    <thead class="card-body">
+                                        <tr>
+                                            <th class="text-center">ID</th>
+                                            <th class="text-center">First Name</th>
+                                            <th class="text-center">Last Name</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody class="card-body">
+                                        <tr v-for="m in members">
+                                            <td>{{m.personID}}</td>
+                                            <td>{{m.firstName}}</td>
+                                            <td>{{m.lastName}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </center>
+                            <br><br>
+                    </div>
+                    <div class="col-sm-4">
+                        <h1 class="font-weight-light">Certifications</h1>
+                        <p class="lead">
+                            <center>
+                                <table id="taskTable" class="table table-sm table-hover table-responsive">
+                                    <thead class="card-body">
+                                        <tr>
+                                            <th class="text-center">ID</th>
+                                            <th class="text-center">Title</th>
+                                            <th class="text-center">Agency</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody class="card-body">
+                                        <tr v-for="c in certifs">
+                                            <td>{{c.certID}}</td>
+                                            <td>{{c.certName}}</td>
+                                            <td>{{c.certAgency}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </center>
+                            <br><br>
+                    </div> -->
+
+                    <div class="col-sm-6">
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Assign Certification to Member:</h5>
+                                <form @submit.prevent="handleSubmit">
+                                    <p class="card-text">
+
+                                        <div class="form-group">
+                                            <label for="personID" class="control-label">Member:</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="personID" id="personID"
+                                                    v-model="personCert.personID">
+                                                    <option v-for="m in members" :value="m.personID">
+                                                        {{ m.personID }} - {{m.firstName}}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="certID" class="control-label">Certification:</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="certID" id="certID"
+                                                    v-model="personCert.certID">
+                                                    <option v-for="c in certifs" :value="c.certID">
+                                                        {{ c.certID }} - {{c.certName}}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="certDate" class="control-label">Select Certification Expiry
+                                                Date:</label>
+                                            <div class="col-sm-10">
+                                                <input type="date" class="form-control" name="certDate" id="certDate"
+                                                    v-model="personCert.certDate">
+
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <center><button type="submit" class="btn btn-success">Assign
+                                                Certification</button>
+                                        </center>
+
+                                    </p>
+                                </form>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Update Member Certification</h5>
+                                <form @submit.prevent="handleSubmit">
+                                    <p class="card-text">
+
+                                        <div class="form-group">
+                                            <label for="personID" class="control-label">Member:</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="personID" id="personID"
+                                                    v-model="personCert.personID">
+                                                    <option v-for="m in members" :value="m.personID">
+                                                        {{ m.personID }} - {{m.firstName}}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="certID" class="control-label">Certification:</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="certID" id="certID"
+                                                    v-model="personCert.certID">
+                                                    <option v-for="c in certifs" :value="c.certID">
+                                                        {{ c.certID }} - {{c.certName}}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="certDate" class="control-label">Select Certification Expiry
+                                                Date:</label>
+                                            <div class="col-sm-10">
+                                                <input type="date" class="form-control" name="certDate" id="certDate"
+                                                    v-model="personCert.certDate">
+
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <center><button type="submit" class="btn btn-success">Assign
+                                                Certification</button>
+                                        </center>
+
+                                    </p>
+                                </form>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-md-6 queueView sideview">
+                        <h5>Certifications per Member</h5>
+                        <small>Select Member ID from the dropdown to view details of all their certifications: </small>
+                        <div class="filter">
+                            <select class="form-control" name="personID" id="personID" v-model="filter.pc">
+                                <option v-for="m in members" :value="m.personID">
+                                    {{ m.personID }} - {{m.firstName}}
+                                </option>
+                            </select>
+                        </div><br>
+                        <div v-for="p in pcerts" v-if="filter.pc == p.personID">
+                            Certification: {{ p.certName }}<br>
+                            Expiry Date: {{ p.certDate }}<br>
+                            <br>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 queueView sideview">
+                        <h5>Members per Certification</h5>
+                        <small>Select Certificate ID from the dropdown to view all members with the certification:
+                        </small>
+                        <div class="filter">
+                            <select class="form-control" name="certID" id="certID" v-model="filter.cp">
+                                <option v-for="c in certifs" :value="c.certID">
+                                    {{ c.certID }} - {{c.certName}}
+                                </option>
+                            </select>
+                        </div><br>
+                        <div v-for="p in pcerts" v-if="filter.cp == p.certID">
+                            <span class=label>{{ p.firstName }} {{p.lastName}} </span> <br>
+                            Member ID: {{ p.personID }} <br>
+                            Expiry Date: {{ p.certDate }}<br>
+                            <br>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/assigning.app.js"></script>
+
+
+
+</body>
+
+</html>
