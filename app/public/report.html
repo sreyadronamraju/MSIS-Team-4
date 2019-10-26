@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>My Page Title</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Reports</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/site.css">
 </head>
+
 <body>
     <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top mb-5 shadow">
@@ -48,22 +51,22 @@
                   <div class="card-body p-5">
                     <div class="form-group">
                       <label for="personID" class="control-label">Select Certification:</label>
-                      <div class="col-sm-10">
+                      <div class="col-sm-6">
 
-                        <select class="form-control" name="personID" id="delpersonID"
-                          v-model="deletemembers.personID">
-                          <option v-for="m in members" :value="m.personID">{{ m.personID }}</option>
+                        <select class="form-control" name="certID" id="selectCertID"
+                          v-model="certs.certID">
+                          <option v-for="c in certs" :value="c.certID">{{ c.certID }}</option>
                         </select>
                         <!--
                         <input type="number" class="form-control" name="personID" id="delpersonID" placeholder="Member ID"  min="1" v-model="deletemembers.personID">
                         --><br>
                       </div>
                     </div>
-                    <center>
+              <!--      <center>
                       <table id="taskTable" class="table">
                         <thead class="card-body">
                           <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">#</th>                                                           {{c.certAgency}}
                             <th scope="col">Member ID</th>
                             <th scope="col">Member Radio Number</th>
                             <th scope="col">Member Station</th>
@@ -75,13 +78,13 @@
                             <th scope="col">Cert Expiration Date</th>
 
                             <!-- <th scope="col">Page Count</th>
-                        <th scope="col">MSRP</th> -->
-                          </tr>
+-->                     <!--  <th scope="col">MSRP</th> -->
+                    <!--      </tr>
                         </thead>
                         <tbody class="card-body">
                           <tr>
                           <tr v-for="c in certifs">
-                            <td>{{c.Member ID}}</td>
+                            <td>{{c.personID}}</td>
                             <td>{{c.radioNumber}}</td>
                             <td>{{c.station}}</td>
                             <td>{{c.firstName}}</td>
@@ -96,7 +99,7 @@
                       </table>
                     </center>
 
-
+-->
 
 
 <div style="height: 700px"></div>
@@ -110,13 +113,13 @@
 
 
 
-      <script src="js/tablesort.min.js"></script>
+  <!--    <script src="js/tablesort.min.js"></script>
       <script>
 
       // tablesort plugin from https://github.com/tristen/tablesort
         new Tablesort(document.getElementById('taskTable'));
       </script>
-
+-->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="js/report.app.js"></script>
 

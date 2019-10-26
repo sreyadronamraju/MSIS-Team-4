@@ -1,15 +1,15 @@
-
-var memberApp = new Vue({
-  el: '#reportCert',
+var reportApp = new Vue({
+  el: '#reportApp',
   data: {
     members: [],
-    newmember: {}
+    membercert: {},
+    certs:{}
   },
   methods: {
-    fetchMembers() {
-      fetch('api/members/index.php')
+    fetchMemberCerts() {
+      fetch('api/report/index.php')
       .then(response => response.json())
-      .then(json => { memberApp.members = json });
+      .then(json => { reportApp.membercert = json });
     },
 
     handleSubmit(event) {
@@ -47,6 +47,6 @@ var memberApp = new Vue({
   },
   created() {
     this.handleReset();
-    this.fetchMembers();
+    this.fetchMemberCerts();
   }
 });
