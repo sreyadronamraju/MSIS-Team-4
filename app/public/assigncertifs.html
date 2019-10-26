@@ -49,6 +49,7 @@
         <div class="card border-0 shadow my-5">
             <div class="card-body p-5">
                 <div class="row">
+<<<<<<< Updated upstream
                     <div class="col-sm-4">
                         <div id="memberApp">
                             <h1 class="font-weight-light">Members</h1>
@@ -74,6 +75,33 @@
                                 </center>
                                 <br><br>
                         </div>
+=======
+                    <div class="col-sm-3">
+                        <h1 class="font-weight-light">Members</h1>
+                        <p class="lead">
+                            <center>
+                                <table id="taskTable" class="table table-sm table-hover table-responsive">
+                                    <thead class="card-body">
+                                        <tr>
+                                            <th class="text-center">ID</th>
+                                            <th class="text-center">First Name</th>
+                                            <th class="text-center">Last Name</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody class="card-body">
+                                        <tr v-for="m in members">
+                                            <!-- @click="handleRowClick(m)" -->
+                                            <td>{{m.personID}}</td>
+                                            <td>{{m.firstName}}</td>
+                                            <td>{{m.lastName}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </center>
+                            <br><br>
+                            <!-- </div> -->
+>>>>>>> Stashed changes
                     </div>
                     <div class="col-sm-4">
                         <div id="certifsApp">
@@ -102,6 +130,7 @@
                         </div>
                     </div>
 
+<<<<<<< Updated upstream
                     <div class="col-md-4 queueView">
                         <h5 class="sideview">Member Certifications</h5>
                         <!-- <div class="patient patientWaiting" :class="patient.priority + 'Priority'"
@@ -118,6 +147,9 @@
 
                 <div class="row" id="assigningApp">
                     <div class="col-sm-6">
+=======
+                    <div class="col-sm-5">
+>>>>>>> Stashed changes
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Assign Certification to Member:</h5>
