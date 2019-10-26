@@ -4,7 +4,7 @@
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$stmt = $db->prepare('SELECT * FROM PersonCert');
+$stmt = $db->prepare('SELECT * FROM PersonCert,Person, Cert WHERE PersonCert.personID=Person.personID and PersonCert.certID=Cert.certID');
 $stmt->execute();
 $pcerts = $stmt->fetchAll();
 
@@ -14,3 +14,6 @@ $json = json_encode($pcerts, JSON_PRETTY_PRINT);
 // Step 4: Output
 header('Content-Type: application/json');
 echo $json;
+
+
+//AND Person.personID = ?
