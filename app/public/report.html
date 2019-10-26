@@ -11,33 +11,38 @@
 
 <body>
     <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top mb-5 shadow">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top mb-5 shadow">
         <div class="container">
-          <a class="navbar-brand" href="#">Oconee County Fire Rescue</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#">
+                <img src="./img/logo.png" class="logo" alt="">
+                Oconee County Fire Rescue</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-              </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home
-                      <span class="sr-only">(current)</span>
-                    </a>
-              </li>
-              <li class="nav-item">
-                    <a class="nav-link" href="members.html">Members</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="certifs.html">Certifications</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="report.html">Reports</a>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
                     </li>
-            </ul>
-          </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="members.html">Members</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="certifs.html">Certifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="assigncertifs.html">Assign Certifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="report.html">Reports</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </nav>
-
+    </nav>
       <!-- Page Content navigation layout from https://startbootstrap.com/snippets/full-image-background/ -->
       <!-- <div class="container">
         <div class="card border-0 shadow my-5">
@@ -55,51 +60,53 @@
 
                         <select class="form-control" name="certID" id="selectCertID"
                           v-model="certs.certID">
-                          <option v-for="c in certs" :value="c.certID">{{ c.certID }}</option>
+                          <option value="" selected>All Certifications</option>
+                          <option v-for="c in certs" :value="c.certID">{{ c.certID }} : {{c.certName}} : {{c.certAgency}}</option>
+
                         </select>
                         <!--
                         <input type="number" class="form-control" name="personID" id="delpersonID" placeholder="Member ID"  min="1" v-model="deletemembers.personID">
                         --><br>
                       </div>
                     </div>
-              <!--      <center>
+                   <center>
                       <table id="taskTable" class="table">
                         <thead class="card-body">
                           <tr>
-                            <th scope="col">#</th>                                                           {{c.certAgency}}
                             <th scope="col">Member ID</th>
                             <th scope="col">Member Radio Number</th>
                             <th scope="col">Member Station</th>
                             <th scope="col">Member Name</th>
+                            <th scope="col">Email</th>
                             <th scope="col">Certification ID</th>
                             <th scope="col">Certification Name</th>
                             <th scope="col">Certification Agency</th>
                             <th scope="col">Default Expiration Period</th>
                             <th scope="col">Cert Expiration Date</th>
 
-                            <!-- <th scope="col">Page Count</th>
--->                     <!--  <th scope="col">MSRP</th> -->
-                    <!--      </tr>
+
+                          </tr>
                         </thead>
                         <tbody class="card-body">
                           <tr>
-                          <tr v-for="c in certifs">
-                            <td>{{c.personID}}</td>
-                            <td>{{c.radioNumber}}</td>
-                            <td>{{c.station}}</td>
-                            <td>{{c.firstName}}</td>
-                            <td>{{c.lastName}}</td>
-                            <td>{{c.certID}}</td>
-                            <td>{{c.certName}}</td>
-                            <td>{{c.certAgency}}</td>
-                            <td>{{c.expPeriod}}</td>
-                            <td>{{c.certDate}}</td>
+                          <tr v-for="m in membercert">
+                            <td>{{m.personID}}</td>
+                            <td>{{m.radioNumber}}</td>
+                            <td>{{m.stationNumber}}</td>
+                            <td>{{m.firstName}} {{m.lastName}}</td>
+                            <td>{{m.email}}</td>
+                            <td>{{m.certID}}</td>
+                            <td>{{m.certName}}</td>
+                            <td>{{m.certAgency}}</td>
+                            <td>{{m.expPeriod}}</td>
+                            <td>{{m.certDate}}</td>
                           </tr>
                         </tbody>
                       </table>
+                      <button onclick="export_table_to_csv(taskTable,'ExpiredMembers.csv')">Export Table To CSV File</button>
                     </center>
 
--->
+
 
 
 <div style="height: 700px"></div>
@@ -113,15 +120,18 @@
 
 
 
-  <!--    <script src="js/tablesort.min.js"></script>
+     <script src="js/tablesort.min.js"></script>
       <script>
 
       // tablesort plugin from https://github.com/tristen/tablesort
         new Tablesort(document.getElementById('taskTable'));
       </script>
--->
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="js/report.app.js"></script>
+  <script src="js/exportTable.app.js">
+//Credit to CodexWorld - https://www.codexworld.com/export-html-table-data-to-csv-using-javascript/
+  </script>
 
       </body>
       </html>

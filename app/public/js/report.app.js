@@ -6,8 +6,13 @@ var reportApp = new Vue({
     certs:{}
   },
   methods: {
-    fetchMemberCerts() {
+    fetchCerts() {
       fetch('api/report/index.php')
+      .then(response => response.json())
+      .then(json => { reportApp.certs = json });
+    },
+    fetchMemberCerts() {
+      fetch('api/report/indexPersonCert.php')
       .then(response => response.json())
       .then(json => { reportApp.membercert = json });
     },
@@ -46,6 +51,7 @@ var reportApp = new Vue({
     }
   },
   created() {
+    this.fetchCerts();
     this.handleReset();
     this.fetchMemberCerts();
   }
