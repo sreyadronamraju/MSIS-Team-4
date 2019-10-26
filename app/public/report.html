@@ -46,19 +46,34 @@
               <div class="container">
                 <div class="card border-0 shadow my-5">
                   <div class="card-body p-5">
+                    <div class="form-group">
+                      <label for="personID" class="control-label">Select Certification:</label>
+                      <div class="col-sm-10">
+
+                        <select class="form-control" name="personID" id="delpersonID"
+                          v-model="deletemembers.personID">
+                          <option v-for="m in members" :value="m.personID">{{ m.personID }}</option>
+                        </select>
+                        <!--
+                        <input type="number" class="form-control" name="personID" id="delpersonID" placeholder="Member ID"  min="1" v-model="deletemembers.personID">
+                        --><br>
+                      </div>
+                    </div>
                     <center>
                       <table id="taskTable" class="table">
                         <thead class="card-body">
                           <tr>
                             <th scope="col">#</th>
                             <th scope="col">Member ID</th>
+                            <th scope="col">Member Radio Number</th>
+                            <th scope="col">Member Station</th>
                             <th scope="col">Member Name</th>
                             <th scope="col">Certification ID</th>
                             <th scope="col">Certification Name</th>
                             <th scope="col">Certification Agency</th>
                             <th scope="col">Default Expiration Period</th>
-                            <th scope="col">Date of Certification</th>
-                            <th scope="col">Time until Expiration</th>
+                            <th scope="col">Cert Expiration Date</th>
+
                             <!-- <th scope="col">Page Count</th>
                         <th scope="col">MSRP</th> -->
                           </tr>
@@ -67,14 +82,15 @@
                           <tr>
                           <tr v-for="c in certifs">
                             <td>{{c.Member ID}}</td>
-                            <td>{{c.Member Name}}</td>
+                            <td>{{c.radioNumber}}</td>
+                            <td>{{c.station}}</td>
+                            <td>{{c.firstName}}</td>
+                            <td>{{c.lastName}}</td>
                             <td>{{c.certID}}</td>
                             <td>{{c.certName}}</td>
                             <td>{{c.certAgency}}</td>
                             <td>{{c.expPeriod}}</td>
-                            <td>{{c.expPeriod}}</td>
                             <td>{{c.certDate}}</td>
-                            <td>{{c. Calculated Field idk}}</td>
                           </tr>
                         </tbody>
                       </table>
