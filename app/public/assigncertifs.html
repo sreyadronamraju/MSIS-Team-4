@@ -45,38 +45,12 @@
     </nav>
 
     <!-- Page Content navigation layout from https://startbootstrap.com/snippets/full-image-background/ -->
-    <div class="container">
+    <div class="container" id="assigningApp">
         <div class="card border-0 shadow my-5">
             <div class="card-body p-5">
                 <div class="row">
-<<<<<<< Updated upstream
-                    <div class="col-sm-4">
-                        <div id="memberApp">
-                            <h1 class="font-weight-light">Members</h1>
-                            <p class="lead">
-                                <center>
-                                    <table id="taskTable" class="table table-sm table-hover table-responsive">
-                                        <thead class="card-body">
-                                            <tr>
-                                                <th class="text-center">ID</th>
-                                                <th class="text-center">First Name</th>
-                                                <th class="text-center">Last Name</th>
-                                            </tr>
-                                        </thead>
-
-                                        <tbody class="card-body">
-                                            <tr v-for="m in members">
-                                                <td>{{m.personID}}</td>
-                                                <td>{{m.firstName}}</td>
-                                                <td>{{m.lastName}}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </center>
-                                <br><br>
-                        </div>
-=======
                     <div class="col-sm-3">
+
                         <h1 class="font-weight-light">Members</h1>
                         <p class="lead">
                             <center>
@@ -101,55 +75,34 @@
                             </center>
                             <br><br>
                             <!-- </div> -->
->>>>>>> Stashed changes
                     </div>
                     <div class="col-sm-4">
-                        <div id="certifsApp">
-                            <h1 class="font-weight-light">Certifications</h1>
-                            <p class="lead">
-                                <center>
-                                    <table id="taskTable" class="table table-sm table-hover table-responsive">
-                                        <thead class="card-body">
-                                            <tr>
-                                                <th class="text-center">ID</th>
-                                                <th class="text-center">First Name</th>
-                                                <th class="text-center">Last Name</th>
-                                            </tr>
-                                        </thead>
+                        <h1 class="font-weight-light">Certifications</h1>
+                        <p class="lead">
+                            <center>
+                                <table id="taskTable" class="table table-sm table-hover table-responsive">
+                                    <thead class="card-body">
+                                        <tr>
+                                            <th class="text-center">ID</th>
+                                            <th class="text-center">Title</th>
+                                            <th class="text-center">Agency</th>
+                                        </tr>
+                                    </thead>
 
-                                        <tbody class="card-body">
-                                            <tr v-for="c in certifs">
-                                                <td>{{c.certID}}</td>
-                                                <td>{{c.certName}}</td>
-                                                <td>{{c.certAgency}}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </center>
-                                <br><br>
-                        </div>
+                                    <tbody class="card-body">
+                                        <tr v-for="c in certifs">
+                                            <td>{{c.certID}}</td>
+                                            <td>{{c.certName}}</td>
+                                            <td>{{c.certAgency}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </center>
+                            <br><br>
                     </div>
-
-<<<<<<< Updated upstream
-                    <div class="col-md-4 queueView">
-                        <h5 class="sideview">Member Certifications</h5>
-                        <!-- <div class="patient patientWaiting" :class="patient.priority + 'Priority'"
-                            v-for="patient in patients">
-                            {{ formatVisitDateLocal(patient.visitDateUtc) }}<br>
-                            <small>{{ visitDateSince(patient.visitDateUtc) }}</small><br>
-                            <span class="patientName">{{ patient.lastName }}</span>,
-                            <span class="patientName">{{ patient.firstName }}</span><br>
-                            {{ patient.sexAtBirth }} {{ patient.dob }}
-                        </div> -->
-                    </div>
-
-                </div>
-
-                <div class="row" id="assigningApp">
-                    <div class="col-sm-6">
-=======
+                   
                     <div class="col-sm-5">
->>>>>>> Stashed changes
+
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Assign Certification to Member:</h5>
@@ -183,7 +136,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="certDate" class="control-label">Select Certificate Start
+                                            <label for="certDate" class="control-label">Select Certification Expiry
                                                 Date:</label>
                                             <div class="col-sm-10">
                                                 <input type="date" class="form-control" name="certDate" id="certDate"
@@ -205,15 +158,38 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-md-6 queueView sideview">
+                        <h5>Member Certifications</h5>
+                        <small>Select Member ID from the dropdown to view details of his/her certifications: </small>
+                        <div class="filter">
+                            <select class="form-control" name="personID" id="personID" v-model="filter.pc">
+                                <option v-for="m in members" :value="m.personID">
+                                    {{ m.personID }}
+                                </option>
+                            </select>
+                        </div><br>
+                        <div v-for="p in pcerts" v-if="filter.pc=='' || filter.pc == p.personID">
+                            <span class=label>{{ p.personID }} &nbsp; {{ p.firstName }} {{p.lastName}} </span> <br>
+                            Certification: {{ p.certName }}<br>
+                            Expiry Date: {{ p.certDate }}<br>
+                            <br>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
 
 
 
 
 
-                <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-                <script src="js/member.app.js"></script>
-                <script src="js/certifs.app.js"></script>
-                <script src="js/assigning.app.js"></script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="js/assigning.app.js"></script>
 
 
 

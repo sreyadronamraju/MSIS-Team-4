@@ -102,7 +102,7 @@
                           <label for="firstName" class="control-label">First Name:</label>
                           <div class="col-sm-10">
                             <input type="text" class="form-control" name="firstName" id="firstName"
-                              placeholder="Enter first name" v-model="newmember.firstName">
+                              placeholder="Enter first name" v-model="newmember.firstName" required>
                             <br>
                           </div>
                         </div>
@@ -111,7 +111,7 @@
                           <label for="lastName" class="control-label">Last Name:</label>
                           <div class="col-sm-10">
                             <input type="text" class="form-control" name="lastName" id="lastName"
-                              placeholder="Enter last name" v-model="newmember.lastName"><br>
+                              placeholder="Enter last name" v-model="newmember.lastName" required><br>
                           </div>
                         </div>
 
@@ -130,7 +130,7 @@
                         <div class="form-group">
                           <label for="dob" class="control-label">Date of Birth:</label>
                           <div class="col-sm-10">
-                            <input type="date" class="form-control" name="dob" id="dob" v-model="newmember.dob"><br>
+                            <input type="date" class="form-control" name="dob" id="dob" v-model="newmember.dob" required><br>
                           </div>
                         </div>
 
@@ -138,7 +138,7 @@
                           <label for="phoneNumber" class="control-label">Phone No.:</label>
                           <div class="col-sm-10">
                             <input type="text" class="form-control" name="phoneNumber" id="phoneNumber"
-                              placeholder="Enter Phone No." v-model="newmember.phoneNumber"><br>
+                              placeholder="Enter Phone No." v-model="newmember.phoneNumber" required><br>
                           </div>
                         </div>
 
@@ -146,7 +146,7 @@
                           <label for="email" class="control-label">Email ID:</label>
                           <div class="col-sm-10">
                             <input type="email" class="form-control" name="email" id="email"
-                              placeholder="Enter Email ID" v-model="newmember.email"><br>
+                              placeholder="Enter Email ID" v-model="newmember.email" required><br>
                           </div>
                         </div>
 
@@ -154,7 +154,7 @@
                           <label for="dateHired" class="control-label">Date Hired:</label>
                           <div class="col-sm-10">
                             <input type="date" class="form-control" name="dateHired" id="dateHired"
-                              v-model="newmember.dateHired"><br>
+                              v-model="newmember.dateHired" required><br>
                           </div>
                         </div>
 
@@ -170,7 +170,7 @@
                           <label for="isActive" class="control-label">Status:</label>
                           <div class="col-sm-10">
                             <select class="form-control" name="isActive" id="isActive" placeholder="0 | 1"
-                              v-model="newmember.isActive">
+                              v-model="newmember.isActive" required>
                               <option value="0">0</option>
                               <option value="1">1</option>
                             </select>
@@ -183,12 +183,11 @@
                           <div class="col-sm-10">
                             <select class="form-control" name="radioNumber" id="radioNumber"
                               placeholder="Enter Radio No." v-model="newmember.radioNumber">
-                              <option value="15">15</option>
-                              <option value="16">16</option>
-                              <option value="17">17</option>
-                              <option value="18">18</option>
-                              <option value="19">19</option>
-                              <option value="20">20</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
                             </select>
 
                             <br>
@@ -200,10 +199,11 @@
                           <div class="col-sm-10">
                             <select class="form-control" name="stationNumber" id="stationNumber"
                               placeholder="Enter Station No." v-model="newmember.stationNumber">
-                              <option value="22">22</option>
-                              <option value="23">23</option>
-                              <option value="24">24</option>
-                              <option value="25">25</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
                             </select>
 
 
@@ -309,12 +309,11 @@
                           <div class="col-sm-10">
                             <select class="form-control" name="radioNumber" id="editradioNumber"
                               v-model="editmembers.radioNumber">
-                              <option value="15">15</option>
-                              <option value="16">16</option>
-                              <option value="17">17</option>
-                              <option value="18">18</option>
-                              <option value="19">19</option>
-                              <option value="20">20</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
                             </select>
 
                             <br>
@@ -326,10 +325,11 @@
                           <div class="col-sm-10">
                             <select class="form-control" name="stationNumber" id="editstationNumber"
                               v-model="editmembers.stationNumber">
-                              <option value="22">22</option>
-                              <option value="23">23</option>
-                              <option value="24">24</option>
-                              <option value="25">25</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
                             </select>
 
 

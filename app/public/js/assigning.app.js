@@ -3,8 +3,11 @@ var assigningApp = new Vue({
     data: {
       members: [],
       certifs: [],
-      pCert: [],
-      personCert: {}
+      pcerts: [],
+      personCert: {},
+      filter: {
+        pc: ''
+      }
     },
     methods: {
 
@@ -20,6 +23,12 @@ var assigningApp = new Vue({
         .then(json => { assigningApp.certifs = json });
       },
 
+      fetchPersonCertifs() {
+        fetch('api/assigning/index.php')
+        .then(response => response.json())
+        .then(json => { assigningApp.pcerts = json });
+      },
+
       
       handleSubmit(event) {
         fetch('api/assigning/post.php', {
@@ -30,13 +39,14 @@ var assigningApp = new Vue({
           }
         })
         .then( response => response.json() )
-        .then( json => { assigningApp.pCert.push(this.personCert) })
+        .then( json => { assigningApp.pcerts.push(this.personCert) })
         .catch( err => {
           console.error('RECORD POST ERROR:');
           console.error(err);
         })
         this.fetchMembers();
         this.fetchCertifs();
+        this.fetchPersonCertifs();
         this.handleReset();
     },
   
@@ -44,14 +54,16 @@ var assigningApp = new Vue({
         this.personCert = {
             personID:'',
             certID:'',
-            certDate:''
+            certDate:'',
         }
       }
     },
+
     created() {
       this.handleReset();
       this.fetchMembers();
       this.fetchCertifs();
+      this.fetchPersonCertifs();
     }
   });
   

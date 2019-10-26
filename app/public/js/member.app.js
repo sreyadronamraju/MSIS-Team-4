@@ -40,6 +40,7 @@ var memberApp = new Vue({
       }
     })
     this.fetchMembers();
+    this.handleReset();
   },
 
   handleDelete(event){
@@ -51,6 +52,7 @@ var memberApp = new Vue({
       }
     })
     this.fetchMembers();
+    this.handleReset();
   },
   
   handleRowClick(editmembers) {
