@@ -55,12 +55,12 @@
                 <div class="card border-0 shadow my-5">
                   <div class="card-body p-5">
                     <div class="form-group">
-                      <label for="personID" class="control-label">Select Certification:</label>
+                      <label for="personID" class="control-label">Select Expired Certification:</label>
                       <div class="col-sm-6">
 
                         <select class="form-control" name="certID" id="selectCertID"
-                          v-model="certs.certID">
-                          <option value="" selected>All Certifications</option>
+                          v-model="filter.pc">
+                          <option value="" selected="selected">All Certifications</option>
                           <option v-for="c in certs" :value="c.certID">{{ c.certID }} : {{c.certName}} : {{c.certAgency}}</option>
 
                         </select>
@@ -89,7 +89,7 @@
                         </thead>
                         <tbody class="card-body">
                           <tr>
-                          <tr v-for="m in membercert">
+                          <tr v-for="m in membercert" v-if="filter.pc=='' || filter.pc == m.certID">
                             <td>{{m.personID}}</td>
                             <td>{{m.radioNumber}}</td>
                             <td>{{m.stationNumber}}</td>

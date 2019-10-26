@@ -3,7 +3,10 @@ var reportApp = new Vue({
   data: {
     members: [],
     membercert: {},
-    certs:{}
+    certs:{},
+    filter: {
+      pc: ''
+    }
   },
   methods: {
     fetchCerts() {
