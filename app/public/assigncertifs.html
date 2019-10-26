@@ -49,7 +49,7 @@
         <div class="card border-0 shadow my-5">
             <div class="card-body p-5">
                 <div class="row">
-                    <div class="col-sm-3">
+                    <!-- <div class="col-sm-3">
 
                         <h1 class="font-weight-light">Members</h1>
                         <p class="lead">
@@ -65,7 +65,6 @@
 
                                     <tbody class="card-body">
                                         <tr v-for="m in members">
-                                            <!-- @click="handleRowClick(m)" -->
                                             <td>{{m.personID}}</td>
                                             <td>{{m.firstName}}</td>
                                             <td>{{m.lastName}}</td>
@@ -74,7 +73,6 @@
                                 </table>
                             </center>
                             <br><br>
-                            <!-- </div> -->
                     </div>
                     <div class="col-sm-4">
                         <h1 class="font-weight-light">Certifications</h1>
@@ -99,9 +97,9 @@
                                 </table>
                             </center>
                             <br><br>
-                    </div>
+                    </div> -->
 
-                    <div class="col-sm-5">
+                    <div class="col-sm-6">
 
                         <div class="card">
                             <div class="card-body">
@@ -110,30 +108,84 @@
                                     <p class="card-text">
 
                                         <div class="form-group">
-                                            <label for="personID" class="control-label">Member
-                                                ID:</label>
+                                            <label for="personID" class="control-label">Member:</label>
                                             <div class="col-sm-10">
                                                 <select class="form-control" name="personID" id="personID"
                                                     v-model="personCert.personID">
                                                     <option v-for="m in members" :value="m.personID">
-                                                        {{ m.personID }}
+                                                        {{ m.personID }} - {{m.firstName}}
                                                     </option>
                                                 </select>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="certID" class="control-label">Certificate
-                                                ID:</label>
+                                            <label for="certID" class="control-label">Certification:</label>
                                             <div class="col-sm-10">
                                                 <select class="form-control" name="certID" id="certID"
                                                     v-model="personCert.certID">
                                                     <option v-for="c in certifs" :value="c.certID">
-                                                        {{ c.certID }}
+                                                        {{ c.certID }} - {{c.certName}}
                                                     </option>
                                                 </select>
                                             </div>
                                         </div>
+
+
+                                        <div class="form-group">
+                                            <label for="certDate" class="control-label">Select Certification Expiry
+                                                Date:</label>
+                                            <div class="col-sm-10">
+                                                <input type="date" class="form-control" name="certDate" id="certDate"
+                                                    v-model="personCert.certDate">
+
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <center><button type="submit" class="btn btn-success">Assign
+                                                Certification</button>
+                                        </center>
+
+                                    </p>
+                                </form>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Update Member Certification</h5>
+                                <form @submit.prevent="handleSubmit">
+                                    <p class="card-text">
+
+                                        <div class="form-group">
+                                            <label for="personID" class="control-label">Member:</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="personID" id="personID"
+                                                    v-model="personCert.personID">
+                                                    <option v-for="m in members" :value="m.personID">
+                                                        {{ m.personID }} - {{m.firstName}}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="certID" class="control-label">Certification:</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="certID" id="certID"
+                                                    v-model="personCert.certID">
+                                                    <option v-for="c in certifs" :value="c.certID">
+                                                        {{ c.certID }} - {{c.certName}}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+
 
                                         <div class="form-group">
                                             <label for="certDate" class="control-label">Select Certification Expiry
@@ -157,6 +209,7 @@
                         </div>
                     </div>
                 </div>
+                <br>
 
                 <div class="row">
                     <div class="col-md-6 queueView sideview">
@@ -165,12 +218,11 @@
                         <div class="filter">
                             <select class="form-control" name="personID" id="personID" v-model="filter.pc">
                                 <option v-for="m in members" :value="m.personID">
-                                    {{ m.personID }}
+                                    {{ m.personID }} - {{m.firstName}}
                                 </option>
                             </select>
                         </div><br>
-                        <div v-for="p in pcerts" v-if="filter.pc=='' || filter.pc == p.personID">
-                            <span class=label>{{ p.personID }} &nbsp; {{ p.firstName }} {{p.lastName}} </span> <br>
+                        <div v-for="p in pcerts" v-if="filter.pc == p.personID">
                             Certification: {{ p.certName }}<br>
                             Expiry Date: {{ p.certDate }}<br>
                             <br>
@@ -180,17 +232,18 @@
 
                     <div class="col-md-6 queueView sideview">
                         <h5>Members per Certification</h5>
-                        <small>Select Certificate ID from the dropdown to view all members with the certification: </small>
+                        <small>Select Certificate ID from the dropdown to view all members with the certification:
+                        </small>
                         <div class="filter">
                             <select class="form-control" name="certID" id="certID" v-model="filter.cp">
                                 <option v-for="c in certifs" :value="c.certID">
-                                    {{ c.certID }}
+                                    {{ c.certID }} - {{c.certName}}
                                 </option>
                             </select>
                         </div><br>
-                        <div v-for="p in pcerts" v-if="filter.cp=='' || filter.cp == p.certID">
-                            <span class=label>{{ p.personID }} &nbsp; {{ p.firstName }} {{p.lastName}} </span> <br>
-                            Certification: {{ p.certName }}<br>
+                        <div v-for="p in pcerts" v-if="filter.cp == p.certID">
+                            <span class=label>{{ p.firstName }} {{p.lastName}} </span> <br>
+                            Member ID: {{ p.personID }} <br>
                             Expiry Date: {{ p.certDate }}<br>
                             <br>
 
