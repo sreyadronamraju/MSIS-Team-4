@@ -107,10 +107,12 @@
                     </center>
                     <br>
                     <br>
-                    
+                    <div class="row">
+                       <div class="col-sm-6">
                     <div class="form-group ">
+
                       <label for="personID" class="control-label">Select Member by Station Number:</label>
-                      <div class="col-sm-6">
+<!--                      -->
 
                         <select class="form-control" name="stationNumber" id="selectStationNumber"
                           v-model="filter.st">
@@ -123,12 +125,11 @@
 
 
                         </select>
-                        <!--
-                        <input type="number" class="form-control" name="personID" id="delpersonID" placeholder="Member ID"  min="1" v-model="deletemembers.personID">
-                        --><br>
-                      </div>
+
+                     </div>
+                       <div class="col-sm-6">
                       <label for="personID" class="control-label">Select Member by Radio Number:</label>
-                      <div class="col-sm-6">
+
 
                         <select class="form-control" name="radioNumber" id="selectRadioNumber"
                           v-model="filter.ra">
@@ -141,12 +142,11 @@
 
 
                         </select>
-                        <!--
-                        <input type="number" class="form-control" name="personID" id="delpersonID" placeholder="Member ID"  min="1" v-model="deletemembers.personID">
-                        --><br>
+
                       </div>
                     </div>
-
+                  </div>
+<br>
                   <div>
                     <center>
                       <table id="memberTable" class="table table-sm table-hover table-responsive">
