@@ -75,7 +75,7 @@
                           <tr>
                             <th scope="col">Member ID</th>
                             <th scope="col">Member Radio Number</th>
-                            <th scope="col">Member Station</th>
+                            <th scope="col">Station Number</th>
                             <th scope="col">Member Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Certification ID</th>
@@ -103,13 +103,94 @@
                           </tr>
                         </tbody>
                       </table>
-                      <button onclick="export_table_to_csv(taskTable,'ExpiredMembers.csv')">Export Table To CSV File</button>
+                      <button onclick="export_table_to_csv(taskTable,'ExpiredMembers.csv')">Download Report</button>
                     </center>
+                    <br>
+                    <br>
+                    
+                    <div class="form-group ">
+                      <label for="personID" class="control-label">Select Member by Station Number:</label>
+                      <div class="col-sm-6">
+
+                        <select class="form-control" name="stationNumber" id="selectStationNumber"
+                          v-model="filter.st">
+                          <option value="" selected="selected">All Stations</option>
+                          <option :value="1">1</option>
+                          <option :value="2">2</option>
+                          <option :value="3">3</option>
+                          <option :value="4">4</option>
+                          <option :value="5">5</option>
+
+
+                        </select>
+                        <!--
+                        <input type="number" class="form-control" name="personID" id="delpersonID" placeholder="Member ID"  min="1" v-model="deletemembers.personID">
+                        --><br>
+                      </div>
+                      <label for="personID" class="control-label">Select Member by Radio Number:</label>
+                      <div class="col-sm-6">
+
+                        <select class="form-control" name="radioNumber" id="selectRadioNumber"
+                          v-model="filter.ra">
+                          <option value="" selected="selected">All Radio Numbers</option>
+                          <option :value="1">1</option>
+                          <option :value="2">2</option>
+                          <option :value="3">3</option>
+                          <option :value="4">4</option>
+                          <option :value="5">5</option>
+
+
+                        </select>
+                        <!--
+                        <input type="number" class="form-control" name="personID" id="delpersonID" placeholder="Member ID"  min="1" v-model="deletemembers.personID">
+                        --><br>
+                      </div>
+                    </div>
+
+                  <div>
+                    <center>
+                      <table id="memberTable" class="table table-sm table-hover table-responsive">
+                        <thead class="card-body">
+                          <tr>
+                            <th class="text-center">ID</th>
+                            <th class="text-center">First Name</th>
+                            <th class="text-center">Last Name</th>
+                            <th class="text-center">Sex at Birth</th>
+                            <th class="text-center">Date of Birth</th>
+                            <th class="text-center">Phone No.</th>
+                            <th class="text-center">Email ID</th>
+                            <th class="text-center">Date Hired</th>
+                            <th class="text-center">Position</th>
+                            <th class="text-center">Status</th>
+                            <th class="text-center">Radio No.</th>
+                            <th class="text-center">Station No.</th>
+                          </tr>
+                        </thead>
+
+                        <tbody class="card-body">
+                          <tr v-for="p in person" v-for="m in membercert" v-if="filter.st=='' && filter.ra=='' || filter.st == p.stationNumber && filter.ra==''
+                          || filter.st== p.stationNumber && filter.ra == p.radioNumber || filter.st=='' && filter.ra == p.radioNumber">
+                            <td>{{p.personID}}</td>
+                            <td>{{p.firstName}}</td>
+                            <td>{{p.lastName}}</td>
+                            <td>{{p.sexAtBirth}}</td>
+                            <td>{{p.dob}}</td>
+                            <td>{{p.phoneNumber}}</td>
+                            <td>{{p.email}}</td>
+                            <td>{{p.dateHired}}</td>
+                            <td>{{p.position}}</td>
+                            <td>{{p.isActive}}</td>
+                            <td>{{p.radioNumber}}</td>
+                            <td>{{p.stationNumber}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                        <button onclick="export_table_to_csv(memberTable,'MemberByStation.csv')">Download Report</button>
+                    </center>
+                  </div>
 
 
 
-
-<div style="height: 700px"></div>
     </div>
 
 
@@ -132,6 +213,5 @@
   <script src="js/exportTable.app.js">
 //Credit to CodexWorld - https://www.codexworld.com/export-html-table-data-to-csv-using-javascript/
   </script>
-
       </body>
       </html>

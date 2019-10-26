@@ -4,8 +4,11 @@ var reportApp = new Vue({
     members: [],
     membercert: {},
     certs:{},
+    person:{},
     filter: {
-      pc: ''
+      pc: '',
+      st: '',
+      ra: ''
     }
   },
   methods: {
@@ -18,6 +21,11 @@ var reportApp = new Vue({
       fetch('api/report/indexPersonCert.php')
       .then(response => response.json())
       .then(json => { reportApp.membercert = json });
+    },
+    fetchPerson() {
+      fetch('api/report/indexPerson.php')
+      .then(response => response.json())
+      .then(json => { reportApp.person = json });
     },
 
     handleSubmit(event) {
@@ -57,5 +65,6 @@ var reportApp = new Vue({
     this.fetchCerts();
     this.handleReset();
     this.fetchMemberCerts();
+    this.fetchPerson();
   }
 });
