@@ -96,7 +96,7 @@
                     <div class="form-group">
                       <label for="certName" class="control-label col-sm-10">Certification Name:</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" name="certName" id="inputCertName"
+                        <input required type="text" class="form-control" name="certName" id="inputCertName"
                           placeholder="Certification Name" v-model="newcertifs.certName"><br>
                       </div>
                     </div>
@@ -104,7 +104,7 @@
                     <div class="form-group">
                       <label for="certAgency" class="control-label col-sm-10">Certification Agency</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" name="certAgency" id="inputCertAgency"
+                        <input required type="text" class="form-control" name="certAgency" id="inputCertAgency"
                           placeholder="Certification Agency" v-model="newcertifs.certAgency"><br>
                       </div>
                     </div>
@@ -113,7 +113,7 @@
                       <label for="certification" class="control-label col-sm-10">Default Experation Period in
                         Years</label>
                       <div class="col-sm-10">
-                        <input type="integer" class="form-control" name="expPeriod" id="inputExpPeriod"
+                        <input required type="integer" class="form-control" name="expPeriod" id="inputExpPeriod"
                           placeholder="Defualt Experation Period in Years" v-model="newcertifs.expPeriod"><br>
 
                       </div>
@@ -127,49 +127,18 @@
               </div>
             </div>
 
-            <div class="col-sm-6">
-              <div class="card">
-                <div class="card-body">
 
-                  <h1> Delete Certification</h1>
-                  <form @submit.prevent="handleDelete">
-
-                    <!--  <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                <label class="form-check-label" for="inlineRadio1">Renew</label>
-                </div>
-                <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                <label class="form-check-label" for="inlineRadio2">Create New</label>
-                </div>
-                <br>
-                <br>o7
-              -->
-                    <div class="form-group">
-                      <label for="certName" class="control-label col-sm-10">Certification ID:</label>
-                      <div class="col-sm-10">
-                        <input type="number" class="form-control" name="certName" id="inputCertName"
-                          placeholder="Certification ID Number" min="1" v-model="deletecertifs.certID"><br>
-                      </div>
-                    </div>
-
-                    <center><button type="submit" class="btn btn-success">Delete Certification</button></center>
-
-                  </form>
-                </div>
-              </div>
-            </div>
-            <!--EDIT MEMBER------------------------------------------------------------------>
+            <!--EDIT CERTIFICATION------------------------------------------------------------------>
                           <div class="col-sm-6 mb-3 mb-md-0">
                             <div class="card">
                               <div class="card-body">
-                                <h5 class="card-title">Edit Certification:</h5>
+                                <h1 class="font-weight-light">Edit Certification</h1>
                                 <form @submit.prevent="handleEdit">
                                   <p class="card-text">
                                     <div class="form-group">
                                       <label for="firstName" class="control-label">Certification ID:</label>
                                       <div class="col-sm-10">
-                                        <input type="text" class="form-control" v-model="editcertifs.certID" name="editCertID" id="editCertID">
+                                        <input required type="text" class="form-control" v-model="editcertifs.certID" name="editCertID" id="editCertID">
                                         <br>
                                       </div>
                                     </div>
@@ -177,14 +146,14 @@
                                     <div class="form-group">
                                       <label for="lastName" class="control-label">Certification Name:</label>
                                       <div class="col-sm-10">
-                                        <input type="text" class="form-control"  v-model="editcertifs.certName" name="editCertName" id="editCertName"><br>
+                                        <input  required type="text" class="form-control"  v-model="editcertifs.certName" name="editCertName" id="editCertName"><br>
                                       </div>
                                     </div>
 
                                     <div class="form-group">
                                       <label for="sexAtBirth" class="control-label">Certification Agency:</label>
                                       <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="editCertAgency" id="editCertAgency"      v-model="editcertifs.certAgency"                    >
+                                        <input required  type="text" class="form-control" name="editCertAgency" id="editCertAgency"      v-model="editcertifs.certAgency"                    >
                                         <br>
                                       </div>
                                     </div>
@@ -192,7 +161,7 @@
                                     <div class="form-group">
                                       <label for="dob" class="control-label">Default Experation Period:</label>
                                       <div class="col-sm-10">
-                                        <input type="number" class="form-control" name="editEXP" id="editEXP"     v-model="editcertifs.expPeriod" ><br>
+                                        <input required type="number" class="form-control" name="editEXP" id="editEXP"     v-model="editcertifs.expPeriod" ><br>
                                       </div>
                                     </div>
                                     <br>
@@ -201,6 +170,47 @@
                                   </p>
                                 </form>
                               </div>
+                            </div>
+                          </div>
+
+
+                          <!-- Delete Certification-->
+                          <div class="col-sm-12">
+                            <div class="card">
+                              <div class="card-body">
+
+                                <h1> Delete Certification</h1>
+                                <form @submit.prevent="handleDelete">
+
+                                  <!--  <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                              <label class="form-check-label" for="inlineRadio1">Renew</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                              <label class="form-check-label" for="inlineRadio2">Create New</label>
+                              </div>
+                              <br>
+                              <br>o7
+                            -->
+                                  <div class="form-group">
+                                    <label for="certName" class="control-label col-sm-10">Certification ID:</label>
+
+                                    <select placeholder="Certification ID Number" class="form-control" name="certID" id="selectCertID"  >
+                                      <option value="" selected="selected">Select a Certification to Delete</option>
+                                      <option v-for="c in certifs" v-for="c in certifs" v-if="filter.pc=='' || filter.pc == c.certID" :value="c.certID">{{ c.certID }} - {{c.certName}} - {{c.certAgency}}</option>
+
+                                    </select>
+                                  </div>
+
+                                  <center><button type="submit" class="btn btn-success">Delete Certification</button></center>
+
+                                </form>
+                              </div>
+
+
+
+
                             </div>
                           </div>
           </div>

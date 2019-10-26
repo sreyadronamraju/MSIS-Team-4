@@ -4,7 +4,10 @@ var certifsApp = new Vue({
     certifs: [],
     newcertifs: {},
     deletecertifs:{},
-    editcertifs:{}
+    editcertifs:{},
+    filter:{
+      pc: ''
+    }
   },
   methods: {
     fetchCertifs() {

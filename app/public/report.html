@@ -61,7 +61,7 @@
                         <select class="form-control" name="certID" id="selectCertID"
                           v-model="filter.pc">
                           <option value="" selected="selected">All Certifications</option>
-                          <option v-for="c in certs" :value="c.certID">{{ c.certID }} : {{c.certName}} : {{c.certAgency}}</option>
+                          <option v-for="c in certs" :value="c.certID">{{ c.certID }} - {{c.certName}} - {{c.certAgency}}</option>
 
                         </select>
                         <!--
