@@ -5,6 +5,7 @@ var assigningApp = new Vue({
       certifs: [],
       pcerts: [],
       personCert: {},
+      editPersonCert: {},
       filter: {
         pc: '',
         cp: ''
@@ -50,6 +51,20 @@ var assigningApp = new Vue({
         this.fetchPersonCertifs();
         this.handleReset();
     },
+
+    handleEdit(event) {
+      fetch('api/assigning/postEdit.php', {
+        method:'POST',
+        body: JSON.stringify(this.editPersonCert),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+      })
+      this.fetchMembers();
+      this.fetchCertifs();
+      this.fetchPersonCertifs();
+      this.handleReset();
+  },
   
       handleReset() {
         this.personCert = {
