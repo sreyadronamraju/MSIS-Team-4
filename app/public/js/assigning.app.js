@@ -6,7 +6,8 @@ var assigningApp = new Vue({
       pcerts: [],
       personCert: {},
       filter: {
-        pc: ''
+        pc: '',
+        cp: ''
       }
     },
     methods: {
