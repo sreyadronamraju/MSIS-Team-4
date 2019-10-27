@@ -136,15 +136,11 @@
 
                 <div class="col-sm-6">
                   <label for="personID" class="control-label">Select Member by Radio Number:</label>
-
-
                   <select class="form-control" name="radioNumber" id="selectRadioNumber" v-model="filter.ra">
-                    <option value="" selected="selected">All Radio Numbers</option>
-                    <option :value="1">1</option>
-                    <option :value="2">2</option>
-                    <option :value="3">3</option>
-                    <option :value="4">4</option>
-                    <option :value="5">5</option>
+                    <option value="" selected="selected">All Radio Numbers</option> 
+                    <option v-for="p in person" :value="p.radioNumber">
+                        {{p.radioNumber}}
+                    </option>
 
 
                   </select>
