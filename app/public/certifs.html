@@ -188,7 +188,7 @@
                       <label for="certName" class="control-label col-sm-10">Certification ID:</label>
 
                       <select placeholder="Certification ID Number" class="form-control" name="certID"
-                        id="selectCertID">
+                        id="selectCertID" v-model="deletecertifs.certID">
                         <option value="" selected="selected">Select a Certification to Delete</option>
                         <option v-for="c in certifs" v-for="c in certifs" v-if="filter.pc=='' || filter.pc == c.certID"
                           :value="c.certID">{{ c.certID }} - {{c.certName}} - {{c.certAgency}}</option>
