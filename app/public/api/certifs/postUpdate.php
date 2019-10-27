@@ -8,9 +8,9 @@ $db = DbConnection::getConnection();
 $stmt = $db->prepare(
   'UPDATE Cert
   SET
-  certName = ?
-  certAgency = ?
-  expPeriod = ?
+  certName = ?,
+  certAgency = ?,
+  expPeriod = ?,
   WHERE certID = ?'
 );
 
