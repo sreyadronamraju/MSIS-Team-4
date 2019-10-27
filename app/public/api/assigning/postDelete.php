@@ -10,7 +10,7 @@ $stmt = $db->prepare(
 );
 
 $stmt->execute([
-  $_POST['PersonCertID'],
+  $_POST['PersonCertID']
 ]);
 
 

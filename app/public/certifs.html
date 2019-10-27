@@ -135,10 +135,10 @@
                   <form @submit.prevent="handleEdit">
                     <p class="card-text">
                       <div class="form-group">
-                        <label for="firstName" class="control-label">Certification ID:</label>
+                        <label for="certID" class="control-label">Certification ID:</label>
                         <div class="col-sm-10">
-                          <input required type="text" class="form-control" v-model="editcertifs.certID"
-                            name="editCertID" id="editCertID">
+                          <input required type="text" class="form-control" 
+                            name="certID" id="editcertID" v-model="editcertifs.certID">
                           <br>
                         </div>
                       </div>
@@ -152,18 +152,18 @@
                       </div>
 
                       <div class="form-group">
-                        <label for="sexAtBirth" class="control-label">Certification Agency:</label>
+                        <label for="certAgency" class="control-label">Certification Agency:</label>
                         <div class="col-sm-10">
-                          <input required type="text" class="form-control" name="editCertAgency" id="editCertAgency"
-                            v-model="editcertifs.certAgency">
+                          <input required type="text" class="form-control" name="editcertAgency" id="editcertAgency"
+                            v-model="editcertifs.certAgency" >
                           <br>
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label for="dob" class="control-label">Default Experation Period:</label>
+                        <label for="EXP" class="control-label">Default Experation Period:</label>
                         <div class="col-sm-10">
-                          <input required type="number" class="form-control" name="editEXP" id="editEXP"
+                          <input required type="number" class="form-control" name="EXP" id="editEXP"
                             v-model="editcertifs.expPeriod"><br>
                         </div>
                       </div>
@@ -188,7 +188,7 @@
                       <label for="certName" class="control-label col-sm-10">Certification ID:</label>
 
                       <select placeholder="Certification ID Number" class="form-control" name="certID"
-                        id="selectCertID">
+                        id="selectCertID" v-model="deletecertifs.certID">
                         <option value="" selected="selected">Select a Certification to Delete</option>
                         <option v-for="c in certifs" v-for="c in certifs" v-if="filter.pc=='' || filter.pc == c.certID"
                           :value="c.certID">{{ c.certID }} - {{c.certName}} - {{c.certAgency}}</option>
@@ -214,25 +214,14 @@
 
 
 
-  <script src="js/tablesort.min.js"></script>
-  <script>
-
-    // tablesort plugin from https://github.com/tristen/tablesort
-    new Tablesort(document.getElementById('taskTable'));
-  </script>
+  
 
 
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="js/certifs.app.js"></script>
-  <script src="js/tablesort.min.js"></script>
-  <script>
-
-    // tablesort plugin from https://github.com/tristen/tablesort
-    new Tablesort(document.getElementById('taskTable'));
-  </script>
-
-</body>
+ 
+ </body>
 <footer>
   OCFR | Phone: (706) 769-3975 | 1291 Greensboro Hwy, Watkinsville, GA 30677
 </footer>

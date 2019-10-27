@@ -6,19 +6,15 @@ $db = DbConnection::getConnection();
 
 // Step 2: Prepare & run the query
 $stmt = $db->prepare(
-  'UPDATE Cert
-  SET
-  certName = ?
-  certAgency = ?
-  expPeriod = ?
-  WHERE certID = ?'
+  'UPDATE Cert SET certName = ?, certAgency = ?, expPeriod = ?  WHERE certID = ?'
 );
 
 $stmt->execute([
-  $_POST['certID'],
+  
   $_POST['certName'],
   $_POST['certAgency'],
-  $_POST['expPeriod']
+  $_POST['expPeriod'],
+  $_POST['certID']
 ]);
 
 
