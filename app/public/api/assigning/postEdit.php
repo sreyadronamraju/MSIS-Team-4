@@ -10,8 +10,9 @@ $stmt = $db->prepare(
 );
 
 $stmt->execute([
+    $_POST['certDate']
     $_POST['PersonCertID'],
-  $_POST['certDate']
+
   
 
 ]);
