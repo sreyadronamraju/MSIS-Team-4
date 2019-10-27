@@ -10,208 +10,212 @@
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top mb-5 shadow">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="./img/logo.png" class="logo" alt="">
-                Oconee County Fire Rescue</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="members.html">Members</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="certifs.html">Certifications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="assigncertifs.html">Assign Certifications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="report.html">Reports</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-      <!-- Page Content navigation layout from https://startbootstrap.com/snippets/full-image-background/ -->
-      <!-- <div class="container">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top mb-5 shadow">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="./img/logo.png" class="logo" alt="">
+        Oconee County Fire Rescue</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="members.html">Members</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="certifs.html">Certifications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="assigncertifs.html">Assign Certifications</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="report.html">Reports</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Content navigation layout from https://startbootstrap.com/snippets/full-image-background/ -->
+  <!-- <div class="container">
         <div class="card border-0 shadow my-5">
           <div class="card-body p-5">
             <h1 class="font-weight-light">Certifications</h1>
             <p class="lead">Insert text here.</p> -->
 
-            <div id="reportApp">
-              <div class="container">
-                <div class="card border-0 shadow my-5">
-                  <div class="card-body p-5">
-                    <div class="form-group">
-                      <label for="personID" class="control-label">Select Expired Certification:</label>
-                      <div class="col-sm-6">
+  <div id="reportApp">
+    <div class="container">
+      <div class="card border-0 shadow my-5">
+        <div class="card-body p-5">
+          <h1 class="font-weight-light">Reports</h1>
+          <div class="card">
+              <div class="card-body">
+          <div class="form-group">
+            <label for="personID" class="control-label">Select Expired Certification:</label>
+            <div class="col-sm-6">
 
-                        <select class="form-control" name="certID" id="selectCertID"
-                          v-model="filter.pc">
-                          <option value="" selected="selected">All Certifications</option>
-                          <option v-for="c in certs" :value="c.certID">{{ c.certID }} - {{c.certName}} - {{c.certAgency}}</option>
+              <select class="form-control" name="certID" id="selectCertID" v-model="filter.pc">
+                <option value="" selected="selected">All Certifications</option>
+                <option v-for="c in certs" :value="c.certID">{{ c.certID }} - {{c.certName}} - {{c.certAgency}}</option>
 
-                        </select>
-                        <!--
+              </select>
+              <!--
                         <input type="number" class="form-control" name="personID" id="delpersonID" placeholder="Member ID"  min="1" v-model="deletemembers.personID">
                         --><br>
-                      </div>
-                    </div>
-                   <center>
-                      <table id="taskTable" class="table">
-                        <thead class="card-body">
-                          <tr>
-                            <th scope="col">Member ID</th>
-                            <th scope="col">Member Radio Number</th>
-                            <th scope="col">Station Number</th>
-                            <th scope="col">Member Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Certification ID</th>
-                            <th scope="col">Certification Name</th>
-                            <th scope="col">Certification Agency</th>
-                            <th scope="col">Default Expiration Period</th>
-                            <th scope="col">Cert Expiration Date</th>
-
-
-                          </tr>
-                        </thead>
-                        <tbody class="card-body">
-                          <tr>
-                          <tr v-for="m in membercert" v-if="filter.pc=='' || filter.pc == m.certID">
-                            <td>{{m.personID}}</td>
-                            <td>{{m.radioNumber}}</td>
-                            <td>{{m.stationNumber}}</td>
-                            <td>{{m.firstName}} {{m.lastName}}</td>
-                            <td>{{m.email}}</td>
-                            <td>{{m.certID}}</td>
-                            <td>{{m.certName}}</td>
-                            <td>{{m.certAgency}}</td>
-                            <td>{{m.expPeriod}}</td>
-                            <td>{{m.certDate}}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      <button onclick="export_table_to_csv(taskTable,'ExpiredMembers.csv')">Download Report</button>
-                    </center>
-                    <br>
-                    <br>
-                    <div class="row">
-                       <div class="col-sm-6">
-                    <div class="form-group ">
-
-                      <label for="personID" class="control-label">Select Member by Station Number:</label>
-<!--                      -->
-
-                        <select class="form-control" name="stationNumber" id="selectStationNumber"
-                          v-model="filter.st">
-                          <option value="" selected="selected">All Stations</option>
-                          <option :value="1">1</option>
-                          <option :value="2">2</option>
-                          <option :value="3">3</option>
-                          <option :value="4">4</option>
-                          <option :value="5">5</option>
-
-
-                        </select>
-
-                     </div>
-                       <div class="col-sm-6">
-                      <label for="personID" class="control-label">Select Member by Radio Number:</label>
-
-
-                        <select class="form-control" name="radioNumber" id="selectRadioNumber"
-                          v-model="filter.ra">
-                          <option value="" selected="selected">All Radio Numbers</option>
-                          <option :value="1">1</option>
-                          <option :value="2">2</option>
-                          <option :value="3">3</option>
-                          <option :value="4">4</option>
-                          <option :value="5">5</option>
-
-
-                        </select>
-
-                      </div>
-                    </div>
-                  </div>
-<br>
-                  <div>
-                    <center>
-                      <table id="memberTable" class="table table-sm table-hover table-responsive">
-                        <thead class="card-body">
-                          <tr>
-                            <th class="text-center">ID</th>
-                            <th class="text-center">First Name</th>
-                            <th class="text-center">Last Name</th>
-                            <th class="text-center">Sex at Birth</th>
-                            <th class="text-center">Date of Birth</th>
-                            <th class="text-center">Phone No.</th>
-                            <th class="text-center">Email ID</th>
-                            <th class="text-center">Date Hired</th>
-                            <th class="text-center">Position</th>
-                            <th class="text-center">Status</th>
-                            <th class="text-center">Radio No.</th>
-                            <th class="text-center">Station No.</th>
-                          </tr>
-                        </thead>
-
-                        <tbody class="card-body">
-                          <tr v-for="p in person" v-for="m in membercert" v-if="filter.st=='' && filter.ra=='' || filter.st == p.stationNumber && filter.ra==''
-                          || filter.st== p.stationNumber && filter.ra == p.radioNumber || filter.st=='' && filter.ra == p.radioNumber">
-                            <td>{{p.personID}}</td>
-                            <td>{{p.firstName}}</td>
-                            <td>{{p.lastName}}</td>
-                            <td>{{p.sexAtBirth}}</td>
-                            <td>{{p.dob}}</td>
-                            <td>{{p.phoneNumber}}</td>
-                            <td>{{p.email}}</td>
-                            <td>{{p.dateHired}}</td>
-                            <td>{{p.position}}</td>
-                            <td>{{p.isActive}}</td>
-                            <td>{{p.radioNumber}}</td>
-                            <td>{{p.stationNumber}}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                        <button onclick="export_table_to_csv(memberTable,'MemberByStation.csv')">Download Report</button>
-                    </center>
-                  </div>
-
-
-
-    </div>
-
-
-
+            </div>
           </div>
+          <center>
+            <table id="taskTable" class="table table-sm table-hover table-responsive">
+              <thead class="card-body">
+                <tr>
+                  <th scope="col">Member ID</th>
+                  <th scope="col">Radio Number</th>
+                  <th scope="col">Station Number</th>
+                  <th scope="col">Member Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Certification ID</th>
+                  <th scope="col">Certification Title</th>
+                  <th scope="col">Certification Agency</th>
+                  <th scope="col">Default Expiration Period</th>
+                  <th scope="col">Cert Expiration Date</th>
+
+
+                </tr>
+              </thead>
+              <tbody class="card-body">
+                <tr>
+                <tr v-for="m in membercert" v-if="filter.pc=='' || filter.pc == m.certID">
+                  <td>{{m.personID}}</td>
+                  <td>{{m.radioNumber}}</td>
+                  <td>{{m.stationNumber}}</td>
+                  <td>{{m.firstName}} {{m.lastName}}</td>
+                  <td>{{m.email}}</td>
+                  <td>{{m.certID}}</td>
+                  <td>{{m.certName}}</td>
+                  <td>{{m.certAgency}}</td>
+                  <td>{{m.expPeriod}}</td>
+                  <td>{{m.certDate}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <button onclick="export_table_to_csv(taskTable,'ExpiredMembers.csv')">Download Report</button>
+          </center>
+          </div>
+          </div>        
+          <br>
+          <br>
+          <div class="row">
+            <div class="col-sm-6">
+              
+              <div class="form-group ">
+
+                <label for="personID" class="control-label">Select Member by Station Number:</label>
+
+                <select class="form-control" name="stationNumber" id="selectStationNumber" v-model="filter.st">
+                  <option value="" selected="selected">All Stations</option>
+                  <option :value="1">1</option>
+                  <option :value="2">2</option>
+                  <option :value="3">3</option>
+                  <option :value="4">4</option>
+                  <option :value="5">5</option>
+
+
+                </select>
+
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <label for="personID" class="control-label">Select Member by Radio Number:</label>
+
+
+              <select class="form-control" name="radioNumber" id="selectRadioNumber" v-model="filter.ra">
+                <option value="" selected="selected">All Radio Numbers</option>
+                <option :value="1">1</option>
+                <option :value="2">2</option>
+                <option :value="3">3</option>
+                <option :value="4">4</option>
+                <option :value="5">5</option>
+
+
+              </select>
+
+            </div>
+          </div>
+          <br>
+          <div>
+            <center>
+              <table id="memberTable" class="table table-sm table-hover table-responsive">
+                <thead class="card-body">
+                  <tr>
+                    <th class="text-center">ID</th>
+                    <th class="text-center">First Name</th>
+                    <th class="text-center">Last Name</th>
+                    <th class="text-center">Sex at Birth</th>
+                    <th class="text-center">Date of Birth</th>
+                    <th class="text-center">Phone No.</th>
+                    <th class="text-center">Email ID</th>
+                    <th class="text-center">Date Hired</th>
+                    <th class="text-center">Position</th>
+                    <th class="text-center">Status</th>
+                    <th class="text-center">Radio No.</th>
+                    <th class="text-center">Station No.</th>
+                  </tr>
+                </thead>
+
+                <tbody class="card-body">
+                  <tr v-for="p in person" v-for="m in membercert"
+                    v-if="filter.st=='' && filter.ra=='' || filter.st == p.stationNumber && filter.ra==''
+                          || filter.st== p.stationNumber && filter.ra == p.radioNumber || filter.st=='' && filter.ra == p.radioNumber">
+                    <td>{{p.personID}}</td>
+                    <td>{{p.firstName}}</td>
+                    <td>{{p.lastName}}</td>
+                    <td>{{p.sexAtBirth}}</td>
+                    <td>{{p.dob}}</td>
+                    <td>{{p.phoneNumber}}</td>
+                    <td>{{p.email}}</td>
+                    <td>{{p.dateHired}}</td>
+                    <td>{{p.position}}</td>
+                    <td>{{p.isActive}}</td>
+                    <td>{{p.radioNumber}}</td>
+                    <td>{{p.stationNumber}}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <button onclick="export_table_to_csv(memberTable,'MemberByStation.csv')">Download Report</button>
+            </center>
+          </div>
+
+
+
         </div>
+
+
+
       </div>
+    </div>
+  </div>
 
 
 
-     <script src="js/tablesort.min.js"></script>
-      <script>
+  <script src="js/tablesort.min.js"></script>
+  <script>
 
-      // tablesort plugin from https://github.com/tristen/tablesort
-        new Tablesort(document.getElementById('taskTable'));
-      </script>
+    // tablesort plugin from https://github.com/tristen/tablesort
+    new Tablesort(document.getElementById('taskTable'));
+  </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="js/report.app.js"></script>
   <script src="js/exportTable.app.js">
 //Credit to CodexWorld - https://www.codexworld.com/export-html-table-data-to-csv-using-javascript/
   </script>
-      </body>
-      </html>
+</body>
+
+</html>
