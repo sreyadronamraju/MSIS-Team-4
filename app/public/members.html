@@ -183,19 +183,8 @@
                           <label for="radioNumber" class="control-label">Radio No.:</label>
                           <br><small>(Radio no. is unique per member. Select a radio no. that has not already been assigned to another member.)</small><br><br>
                           <div class="col-sm-10">
-                            <select class="form-control" name="radioNumber" id="radioNumber"
+                            <input type="number" class="form-control" name="radioNumber" id="radioNumber"
                               placeholder="Enter Radio No." v-model="newmember.radioNumber">
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                              <option value="5">5</option>
-                              <option value="4">6</option>
-                              <option value="5">7</option>
-                              <option value="4">8</option>
-                              <option value="5">9</option>
-                            </select>
-
                             <br>
                           </div>
                         </div>
@@ -314,18 +303,8 @@
                           <label for="radioNumber" class="control-label">Radio No.:</label>
                           <br><small>(Radio no. is unique per member. Select a radio no. that has not already been assigned to another member.)</small><br><br>
                           <div class="col-sm-10">
-                            <select class="form-control" name="radioNumber" id="editradioNumber"
-                              v-model="editmembers.radioNumber">
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                              <option value="5">5</option>
-                              <option value="4">6</option>
-                              <option value="5">7</option>
-                              <option value="4">8</option>
-                              <option value="5">9</option>
-                            </select>
+                              <input type="number" class="form-control" name="radioNumber" id="editradioNumber"
+                              placeholder="Enter Radio No." v-model="editmembers.radioNumber">
 
                             <br>
                           </div>
