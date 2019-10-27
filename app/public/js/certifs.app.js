@@ -56,6 +56,10 @@ var certifsApp = new Vue({
       })
     },
 
+    handleRowClick(editcertifs) {
+      certifsApp.editcertifs = editcertifs;
+    },
+
     handleReset() {
       this.newcertifs = {
         certfName: '',

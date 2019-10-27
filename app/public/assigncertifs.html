@@ -34,7 +34,7 @@
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="assigncertifs.html">Assign Certifications
-                                <span class="sr-only">(current)</span>
+                            <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -49,7 +49,7 @@
     <div class="container" id="assigningApp">
         <div class="card border-0 shadow my-5">
             <div class="card-body p-5">
-                    <h1 class="font-weight-light">Member Certifications</h1><br>
+                <h1 class="font-weight-light">Member Certifications</h1><br>
                 <div class="row">
                     <div class="col-sm-6">
 
@@ -115,24 +115,35 @@
                                     <p class="card-text">
 
                                         <div class="form-group">
-                                            <label for="personID" class="control-label">Select Certification for
+                                            <label for="PersonCertID" class="control-label">Select Certification for
                                                 Member:</label>
                                             <div class="col-sm-10">
-                                                <select class="form-control" name="personID" id="personID"
+                                                <select class="form-control" name="PersonCertID" id="editPersonCertID"
                                                     v-model="editPersonCert.PersonCertID">
-                                                    <option v-for="m in pcerts" :value="m.PersonCertID">
-                                                        {{ m.personID }} - {{m.firstName}} - {{m.certName}}
+                                                    <option v-for="p in pcerts" :value="p.PersonCertID">
+                                                        {{ p.personID }} - {{p.firstName}} - {{p.certName}}
                                                     </option>
                                                 </select>
                                             </div>
                                         </div>
-
                                         <div class="form-group">
-                                            <label for="certDate" class="control-label">Select Certification Expiry
+                                            <label for="renewcertDate" class="control-label">Select Certification
+                                                Renewal
                                                 Date:</label>
                                             <div class="col-sm-10">
-                                                <input type="date" class="form-control" name="certDate" id="certDate"
-                                                    v-model="editPersonCert.certDate">
+                                                <input type="date" class="form-control" name="renewDate"
+                                                    id="editrenewcertDate" v-model="editPersonCert.renewDate">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="certDate" class="control-label">Select Renewed Certification
+                                                Expiry
+                                                Date:</label>
+                                            <div class="col-sm-10">
+                                                <input type="date" class="form-control" name="certDate"
+                                                    id="editcertDate" v-model="editPersonCert.certDate">
 
                                             </div>
                                         </div>
@@ -142,7 +153,10 @@
                                         </center>
 
                                     </p>
+
                                 </form>
+
+
 
 
                             </div>
@@ -165,6 +179,7 @@
                         <div v-for="p in pcerts" v-if="filter.pc == p.personID">
                             Certification: {{ p.certName }}<br>
                             Expiry Date: {{ p.certDate }}<br>
+                            Renewal Date: {{ p.renewDate }}<br>
                             <br>
 
                         </div>
@@ -189,7 +204,31 @@
 
                         </div>
                     </div>
+                </div><br>
+                <!-- Delete Member Cert---------------------------------------------------------------->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Delete Member Certification:</h5>
+
+                        <form @submit.prevent="handleDelete">
+                            <p class="card-text">
+                                <div class="form-group">
+                                    <label for="personCertID" class="control-label">Select Member Certification:</label>
+                                    <div class="col-sm-10">
+
+                                        <select class="form-control" name="PersonCertID" id="delPersonCertID"
+                                            v-model="deletePersonCert.PersonCertID">
+                                            <option v-for="p in pcerts" :value="p.PersonCertID">{{ p.personID }} - {{ p.firstName }} - {{ p.certName }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <center><button type="submit" class="btn btn-success">Delete Member</button></center>
+
+                        </form>
+
+                    </div>
                 </div>
+
 
             </div>
         </div>
@@ -207,5 +246,8 @@
 
 
 </body>
+<footer>
+    OCFR | Phone: (706) 769-3975 | 1291 Greensboro Hwy, Watkinsville, GA 30677
+</footer>
 
 </html>

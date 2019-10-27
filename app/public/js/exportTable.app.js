@@ -27,7 +27,9 @@ function download_csv(csv, filename) {
     downloadLink.click();
 }
 
-function export_table_to_csv(html, filename) {
+
+//html,filename
+function export_table_to_csv(html,filename) {
 	var csv = [];
 	var rows = document.querySelectorAll("table tr");
 
@@ -48,3 +50,5 @@ document.querySelector("button").addEventListener("click", function () {
     var html = document.querySelector("table").outerHTML;
 	export_table_to_csv(html, "table.csv");
 });
+
+

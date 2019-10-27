@@ -39,8 +39,8 @@ var memberApp = new Vue({
         "Content-Type": "application/json; charset=utf-8"
       }
     })
-    this.fetchMembers();
-    this.handleReset();
+    // this.fetchMembers();
+    // this.handleReset();
   },
 
   handleDelete(event){

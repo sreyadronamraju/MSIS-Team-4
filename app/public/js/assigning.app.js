@@ -6,6 +6,7 @@ var assigningApp = new Vue({
       pcerts: [],
       personCert: {},
       editPersonCert: {},
+      deletePersonCert: {},
       filter: {
         pc: '',
         cp: ''
@@ -60,10 +61,22 @@ var assigningApp = new Vue({
           "Content-Type": "application/json; charset=utf-8"
         }
       })
-      this.fetchMembers();
-      this.fetchCertifs();
-      this.fetchPersonCertifs();
-      this.handleReset();
+      // this.fetchMembers();
+      // this.fetchCertifs();
+      // this.fetchPersonCertifs();
+      // this.handleReset();
+  },
+
+  handleDelete(event){
+    fetch('api/assigning/postDelete.php',{
+      method: 'POST',
+      body: JSON.stringify(this.deletePersonCert),
+      headers: {
+        "Content-Type": "application/json; charset=utf-8"
+      }
+    })
+     this.fetchPersonCertifs();
+     this.handleReset();
   },
   
       handleReset() {
@@ -71,6 +84,7 @@ var assigningApp = new Vue({
             personID:'',
             certID:'',
             certDate:'',
+            renewDate:''
         }
       }
     },

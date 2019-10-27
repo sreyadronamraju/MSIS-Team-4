@@ -6,15 +6,11 @@ $db = DbConnection::getConnection();
 
 // Step 2: Prepare & run the query
 $stmt = $db->prepare(
-  'UPDATE PersonCert SET renewDate=?,certDate=? where PersonCertID=?'
+  'DELETE FROM PersonCert WHERE PersonCertID=?'
 );
 
 $stmt->execute([
-  $_POST['renewDate'],
-  $_POST['certDate'],
-  $_POST['PersonCertID']
-  
-
+  $_POST['PersonCertID'],
 ]);
 
 

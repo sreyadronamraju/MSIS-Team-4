@@ -48,9 +48,9 @@
     <div class="container">
       <div class="card border-0 shadow my-5">
         <div class="card-body p-5">
-            <h1 class="font-weight-light">Certifications</h1>
+          <h1 class="font-weight-light">Certifications</h1>
           <center>
-            <table id="taskTable" class="table">
+            <table id="taskTable" class="table table-hover">
               <thead class="card-body">
                 <tr>
                   <th scope="col">#</th>
@@ -63,7 +63,7 @@
               </thead>
               <tbody class="card-body">
                 <tr>
-                <tr v-for="c in certifs">
+                <tr v-for="c in certifs" @click="handleRowClick(c)">
                   <td>{{c.certID}}</td>
                   <td>{{c.certName}}</td>
                   <td>{{c.certAgency}}</td>
@@ -128,90 +128,84 @@
 
 
             <!--EDIT CERTIFICATION------------------------------------------------------------------>
-                          <div class="col-sm-6 mb-3 mb-md-0">
-                            <div class="card">
-                              <div class="card-body">
-                                <h1 class="font-weight-light">Edit Certification</h1>
-                                <form @submit.prevent="handleEdit">
-                                  <p class="card-text">
-                                    <div class="form-group">
-                                      <label for="firstName" class="control-label">Certification ID:</label>
-                                      <div class="col-sm-10">
-                                        <input required type="text" class="form-control" v-model="editcertifs.certID" name="editCertID" id="editCertID">
-                                        <br>
-                                      </div>
-                                    </div>
+            <div class="col-sm-6 mb-3 mb-md-0">
+              <div class="card">
+                <div class="card-body">
+                  <h1 class="font-weight-light">Edit Certification</h1>
+                  <form @submit.prevent="handleEdit">
+                    <p class="card-text">
+                      <div class="form-group">
+                        <label for="firstName" class="control-label">Certification ID:</label>
+                        <div class="col-sm-10">
+                          <input required type="text" class="form-control" v-model="editcertifs.certID"
+                            name="editCertID" id="editCertID">
+                          <br>
+                        </div>
+                      </div>
 
-                                    <div class="form-group">
-                                      <label for="lastName" class="control-label">Certification Name:</label>
-                                      <div class="col-sm-10">
-                                        <input  required type="text" class="form-control"  v-model="editcertifs.certName" name="editCertName" id="editCertName"><br>
-                                      </div>
-                                    </div>
+                      <div class="form-group">
+                        <label for="lastName" class="control-label">Certification Name:</label>
+                        <div class="col-sm-10">
+                          <input required type="text" class="form-control" v-model="editcertifs.certName"
+                            name="editCertName" id="editCertName"><br>
+                        </div>
+                      </div>
 
-                                    <div class="form-group">
-                                      <label for="sexAtBirth" class="control-label">Certification Agency:</label>
-                                      <div class="col-sm-10">
-                                        <input required  type="text" class="form-control" name="editCertAgency" id="editCertAgency"      v-model="editcertifs.certAgency"                    >
-                                        <br>
-                                      </div>
-                                    </div>
+                      <div class="form-group">
+                        <label for="sexAtBirth" class="control-label">Certification Agency:</label>
+                        <div class="col-sm-10">
+                          <input required type="text" class="form-control" name="editCertAgency" id="editCertAgency"
+                            v-model="editcertifs.certAgency">
+                          <br>
+                        </div>
+                      </div>
 
-                                    <div class="form-group">
-                                      <label for="dob" class="control-label">Default Experation Period:</label>
-                                      <div class="col-sm-10">
-                                        <input required type="number" class="form-control" name="editEXP" id="editEXP"     v-model="editcertifs.expPeriod" ><br>
-                                      </div>
-                                    </div>
-                                    <br>
-                                    <center><button type="submit" class="btn btn-success">Edit Certification</button>
-                                    </center>
-                                  </p>
-                                </form>
-                              </div>
-                            </div>
-                          </div>
+                      <div class="form-group">
+                        <label for="dob" class="control-label">Default Experation Period:</label>
+                        <div class="col-sm-10">
+                          <input required type="number" class="form-control" name="editEXP" id="editEXP"
+                            v-model="editcertifs.expPeriod"><br>
+                        </div>
+                      </div>
+                      <br>
+                      <center><button type="submit" class="btn btn-success">Edit Certification</button>
+                      </center>
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </div>
 
 
-                          <!-- Delete Certification-->
-                          <div class="col-sm-12">
-                            <div class="card">
-                              <div class="card-body">
+            <!-- Delete Certification-->
+            <div class="col-sm-12">
+              <div class="card">
+                <div class="card-body">
 
-                                <h1> Delete Certification</h1>
-                                <form @submit.prevent="handleDelete">
+                  <h1> Delete Certification</h1>
+                  <form @submit.prevent="handleDelete">
+                    <div class="form-group">
+                      <label for="certName" class="control-label col-sm-10">Certification ID:</label>
 
-                                  <!--  <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                              <label class="form-check-label" for="inlineRadio1">Renew</label>
-                              </div>
-                              <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                              <label class="form-check-label" for="inlineRadio2">Create New</label>
-                              </div>
-                              <br>
-                              <br>o7
-                            -->
-                                  <div class="form-group">
-                                    <label for="certName" class="control-label col-sm-10">Certification ID:</label>
+                      <select placeholder="Certification ID Number" class="form-control" name="certID"
+                        id="selectCertID">
+                        <option value="" selected="selected">Select a Certification to Delete</option>
+                        <option v-for="c in certifs" v-for="c in certifs" v-if="filter.pc=='' || filter.pc == c.certID"
+                          :value="c.certID">{{ c.certID }} - {{c.certName}} - {{c.certAgency}}</option>
 
-                                    <select placeholder="Certification ID Number" class="form-control" name="certID" id="selectCertID"  >
-                                      <option value="" selected="selected">Select a Certification to Delete</option>
-                                      <option v-for="c in certifs" v-for="c in certifs" v-if="filter.pc=='' || filter.pc == c.certID" :value="c.certID">{{ c.certID }} - {{c.certName}} - {{c.certAgency}}</option>
+                      </select>
+                    </div>
 
-                                    </select>
-                                  </div>
+                    <center><button type="submit" class="btn btn-success">Delete Certification</button></center>
 
-                                  <center><button type="submit" class="btn btn-success">Delete Certification</button></center>
-
-                                </form>
-                              </div>
+                  </form>
+                </div>
 
 
 
 
-                            </div>
-                          </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -239,5 +233,8 @@
   </script>
 
 </body>
+<footer>
+  OCFR | Phone: (706) 769-3975 | 1291 Greensboro Hwy, Watkinsville, GA 30677
+</footer>
 
 </html>
